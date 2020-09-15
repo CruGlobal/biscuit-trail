@@ -6,9 +6,8 @@ import { toast } from 'react-toastify';
 import { getTranslation } from 'utils/translations';
 
 let API = 'http://localhost:8000';
-// TODO: Fill out the right url
 if (process.env.NODE_ENV === 'production') {
-  API = 'https://digital-biscuit-trail-devapi.herokuapp.com';
+  API = '/';
 }
 export const socket = io(API);
 

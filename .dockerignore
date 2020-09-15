@@ -1,0 +1,5 @@
+# Ignore these files/paths when copying to docker images
+node_modules
+*/node_modules
+web/build
+api/dist
