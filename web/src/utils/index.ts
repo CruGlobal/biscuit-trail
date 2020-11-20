@@ -20,7 +20,7 @@ export function isTouchDevice() {
 }
 
 export const isFunction = (fn: any) => typeof fn === 'function';
-export const isArray = (a: any) => Array.isArray(a);
+export const isArray = (a: any): a is any[] => Array.isArray(a);
 export const isNumber = (n: any) => typeof n === 'number';
 export const isObjectEmpty = (o: any) => Object.entries(o).length === 0 && o.constructor === Object;
 export const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -39,9 +39,6 @@ export async function asyncForEach<T>(arr: T[], callback: (a: T, i: number, arr:
     await callback(arr[i], i, arr);
   }
 }
-
-// TODO: Build this out to make sure there are no bad words, etc.
-export const generateCode = () => randomStr(4);
 
 export function checkIsBoardFull(board: Board) {
   return board.filter((b) => !!b).length === BOARD_SIZE;

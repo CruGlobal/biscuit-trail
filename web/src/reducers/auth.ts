@@ -7,6 +7,7 @@ export interface AuthState {
   user: User;
   room: string;
   lang: Translations;
+  hasUserSetLang: boolean;
 }
 const initialState: AuthState = {
   user: {
@@ -14,6 +15,7 @@ const initialState: AuthState = {
   },
   room: '',
   lang: Translations.en,
+  hasUserSetLang: false,
 };
 
 export default function (state = initialState, action: any) {
@@ -32,6 +34,8 @@ export default function (state = initialState, action: any) {
     case REDUX_ACTIONS.SET_CODE:
       return { ...newState, room: action.room || '' };
     case REDUX_ACTIONS.SET_LANG:
+      return { ...newState, lang: action.lang || Translations.en, hasUserSetLang: true };
+    case REDUX_ACTIONS.SET_LANG_AUTO:
       return { ...newState, lang: action.lang || Translations.en };
     case REDUX_ACTIONS.UPDATE_ROOM:
       if ((action.room as Room).code !== state.room) {
@@ -39,7 +43,7 @@ export default function (state = initialState, action: any) {
       }
       return state;
     case REDUX_ACTIONS.LOGOUT:
-      return initialState;
+      return { ...initialState, hasUserSetLang: state.hasUserSetLang };
     default:
       if (!state.user?.id || !state.lang) {
         return newState;

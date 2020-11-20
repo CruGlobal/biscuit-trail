@@ -1,11 +1,11 @@
 import React, { useState, useRef, ReactNode } from 'react';
 import classNames from 'classnames';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Card, TextLine } from 'utils/types';
 import Icon from 'components/Icon';
 import { useOnClickOutside } from 'utils/hooks';
 import { closeCardModal } from 'actions/modal';
-import { getTranslationFront, getTranslationBack } from 'utils/translations';
+import { getTranslationFront, getTranslationBack, getTranslation, TranslationsConfig } from 'utils/translations';
 import Card1 from 'assets/images/Card1Download.jpg';
 import Card2 from 'assets/images/Card2Download.png';
 import Card3 from 'assets/images/Card3Download.png';
@@ -18,21 +18,8 @@ import Card9 from 'assets/images/Card9Download.png';
 import Card10 from 'assets/images/Card10Download.png';
 import Card11 from 'assets/images/Card11Download.png';
 import Card12 from 'assets/images/Card12Download.png';
-
-const Downloads: any = {
-  card1: Card1,
-  card2: Card2,
-  card3: Card3,
-  card4: Card4,
-  card5: Card5,
-  card6: Card6,
-  card7: Card7,
-  card8: Card8,
-  card9: Card9,
-  card10: Card10,
-  card11: Card11,
-  card12: Card12,
-};
+import { RootState } from 'reducers';
+import { Translations } from '../../constants';
 
 interface CardModalProps {
   card: Card;
@@ -76,9 +63,17 @@ const ModalWrapper = ({ children }: { children?: ReactNode }) => {
   );
 };
 
+function getCardDownloadUrl(translation: Translations, cardId: string) {
+  const folder = TranslationsConfig[translation]?.folder || TranslationsConfig[Translations.en].folder;
+  const name = cardId.charAt(0).toUpperCase() + cardId.slice(1);
+  return `${process.env.PUBLIC_URL}/img/cards/${folder}/${name}.png`;
+}
+
 const CardModal = ({ card }: CardModalProps) => {
   const dispatch = useDispatch();
   const [isBack, setIsBack] = useState(false);
+  const translation = useSelector(({ auth }: RootState) => auth?.lang || Translations.en);
+
   return (
     <ModalWrapper>
       <div
@@ -93,14 +88,12 @@ const CardModal = ({ card }: CardModalProps) => {
           )}
           style={{ backgroundColor: card.backgroundColor }}
         >
-          {getTranslationFront(card.id).map((l, i: number) => (
+          {getTranslationFront(card.id).map((l: { text: string; isBold?: boolean }, i: number) => (
             <div
               key={i}
               className={classNames(
                 'flex items-center justify-center text-white w-full text-center text-4xl lg:text-6xl ',
-                {
-                  'font-semibold': l.isBold,
-                },
+                { 'font-semibold': l.isBold },
               )}
             >
               {l.text}
@@ -119,7 +112,7 @@ const CardModal = ({ card }: CardModalProps) => {
               className="px-4 py-1 text-white text-xl font-bold text-right absolute right-0"
               style={{ backgroundColor: card.backgroundColor, width: 200, top: -15 }}
             >
-              Be Prepared
+              {getTranslation('bePrepared')}
             </div>
             <div className="bg-white p-4 py-6 text-base my-2">{getTranslationBack(card.id).steps}</div>
           </div>
@@ -132,7 +125,7 @@ const CardModal = ({ card }: CardModalProps) => {
         <Icon name="rotate-cw" className="text-white hover:text-gray-300 cursor-pointer" size={24} />
       </div>
       <div className="absolute bottom-0 right-0 mr-12 mb-3">
-        <a href={Downloads[card.id]} download={card.id || true}>
+        <a href={getCardDownloadUrl(translation, card.id)} download={card.id || true}>
           <Icon name="arrow-down-circle" className="text-white hover:text-gray-300 cursor-pointer" size={24} />
         </a>
       </div>

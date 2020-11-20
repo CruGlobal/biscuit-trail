@@ -6,6 +6,7 @@ import Icon from 'components/Icon';
 import { useDispatch } from 'react-redux';
 import { useOnClickOutside } from 'utils/hooks';
 import { Configs } from '../../constants';
+import { logEvent } from 'utils/analytics';
 
 export default function MoreMenu({ isHost }: { isHost?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,14 +16,17 @@ export default function MoreMenu({ isHost }: { isHost?: boolean }) {
   function handleSettings(event: any) {
     setIsMenuOpen(false);
     dispatch(openModal('HostSettings'));
+    logEvent('Menu.Modal.HostSettings');
   }
   function handlePlayers(event: any) {
     setIsMenuOpen(false);
     dispatch(openModal('Players'));
+    logEvent('Menu.Modal.Players');
   }
   function handleShare(event: any) {
     setIsMenuOpen(false);
     dispatch(openModal('Share'));
+    logEvent('Menu.Modal.Share');
   }
   useOnClickOutside(menuRef, (event: any) => {
     setIsMenuOpen(false);

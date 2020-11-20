@@ -42,6 +42,33 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+
+  <!-- Firebase Add-on -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAqOUk7tg71-ltBoEhsQZ1vNSF1ctxnpGA",
+      authDomain: "digital-biscuit-trail.firebaseapp.com",
+      databaseURL: "https://digital-biscuit-trail.firebaseio.com",
+      projectId: "digital-biscuit-trail",
+      storageBucket: "digital-biscuit-trail.appspot.com",
+      messagingSenderId: "265863997871",
+      appId: "1:265863997871:web:38aae54f8e4de20168675a",
+      measurementId: "G-4162VP2KR5"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 
 </html>

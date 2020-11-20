@@ -9,15 +9,15 @@ import LOGO from '../../assets/images/logoWhite.png';
 import * as socketEvents from 'actions/socket';
 import { getTranslation } from 'utils/translations';
 import { useLangChange } from 'utils/hooks';
+import { logEvent } from 'utils/analytics';
 
 function UserLogin({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
   const dispatch = useDispatch();
-  const authName = useSelector(({ auth }: RootState) => auth.user.name);
+  const authName = useSelector(({ auth }: RootState) => auth.user?.name);
   const authRoomCode = useSelector(({ auth }: RootState) => auth.room);
   const [name, setName] = useState(authName || '');
   const [code, setCode] = useState(authRoomCode || '');
   const [step, setStep] = useState('code');
-  const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   useLangChange();
 
@@ -32,6 +32,7 @@ function UserLogin({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
             message = getTranslation('errorCodeNotAllowed');
           }
           setErrorMessage(message);
+          logEvent('Join.Invalid.Code', { code, name });
           return;
         }
         if (step === 'code') {
@@ -50,6 +51,10 @@ function UserLogin({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-900 flex-col">
       <img src={LOGO} alt="The Biscuit Trail" className="pb-4 w-4/5" style={{ maxWidth: 450 }} />
+      <div className="text-white font-bold text-center text-4xl mb-4" style={{ maxWidth: 420 }}>
+        {getTranslation('biscuitTrail')}
+      </div>
+
       <div
         className="bg-gray-500 text-white font-bold rounded-lg border shadow-lg p-4 sm:p-10 w-4/5 text-center flex flex-col justify-center"
         style={{ maxWidth: 350, maxHeight: 400 }}
@@ -79,9 +84,11 @@ function UserLogin({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
           <Button
             onClick={async () => {
               if (step === 'code') {
+                logEvent('Join.Ask', { code });
                 socketEvents.joinRoomAsk(code);
               } else if (step === 'name') {
                 dispatch({ type: REDUX_ACTIONS.SET_NAME, name: name.trim() });
+                logEvent('Join.Name', { code, name });
                 socketEvents.joinRoomAsk(code);
               }
             }}
