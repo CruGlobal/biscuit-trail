@@ -2,13 +2,10 @@ import React, { useState, useMemo, useEffect } from 'react';
 import classNames from 'classnames';
 import ModalWrapper from './ModalWrapper';
 import * as socketEvents from 'actions/socket';
-import ROUND1 from '../../assets/images/round1.png';
 import { closeModal } from 'actions/modal';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'components/Button';
-import { Rounds, changeRound } from 'actions/socket';
 import { RootState } from 'reducers';
-import { checkIsBoardFull } from 'utils';
 import UserComponent from 'components/UserComponent';
 import { getTranslation } from 'utils/translations';
 

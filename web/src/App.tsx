@@ -14,18 +14,23 @@ import { hot } from 'react-hot-loader';
 import LangPicker from 'components/LangPicker';
 import { getTranslation } from 'utils/translations';
 import { useLangChange } from 'utils/hooks';
+import { logEvent } from 'utils/analytics';
 
 const { store, persistor } = configureStore();
 export const reduxStore = store;
 
 export enum Views {
-  LOGIN,
-  HOSTNEW,
-  GAME,
+  LOGIN = 'LOGIN',
+  HOSTNEW = 'HOSTNEW',
+  GAME = 'GAME',
 }
 function AppRoutes() {
   const [nav, setNav] = useState<Views>(Views.LOGIN);
   useLangChange();
+  function changeNav(view: Views) {
+    logEvent('Change.Nav', { view });
+    setNav(view);
+  }
 
   useEffect(() => {
     socketEvents.socket.on('disconnect', (reason: string) => {
@@ -34,10 +39,12 @@ function AppRoutes() {
         // the disconnection was initiated by the server, you need to reconnect manually
         socketEvents.socket.connect();
       }
+      logEvent('Socket.Disconnect');
     });
     socketEvents.socket.on('reconnect', (attemptNumber: number) => {
       toast.success(getTranslation('connected'));
       socketEvents.askSyncRoom();
+      logEvent('Socket.Reconnect');
     });
 
     return () => {
@@ -48,9 +55,9 @@ function AppRoutes() {
 
   return (
     <div>
-      {nav === Views.LOGIN && <UserLogin onChangeNav={setNav} />}
-      {nav === Views.HOSTNEW && <HostNew onChangeNav={setNav} />}
-      {nav === Views.GAME && <Table onLogout={() => setNav(Views.LOGIN)} />}
+      {nav === Views.LOGIN && <UserLogin onChangeNav={changeNav} />}
+      {nav === Views.HOSTNEW && <HostNew onChangeNav={changeNav} />}
+      {nav === Views.GAME && <Table onLogout={() => changeNav(Views.LOGIN)} />}
     </div>
   );
 }

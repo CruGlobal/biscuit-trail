@@ -11,13 +11,14 @@ import { toast } from 'react-toastify';
 import { Configs } from '../../constants';
 import { getTranslation } from 'utils/translations';
 import { isFunction } from 'utils';
+import { logEvent } from 'utils/analytics';
 
 const ShareModal = () => {
   const dispatch = useDispatch();
   const roomCode = useSelector(({ auth }: RootState) => auth.room);
 
   function handleShare() {
-    //@ts-ignore
+    // @ts-ignore
     if (navigator?.share && isFunction(navigator.share)) {
       try {
         navigator
@@ -28,6 +29,7 @@ const ShareModal = () => {
           })
           .then(() => {
             toast.success(getTranslation('thanksSharing'));
+            logEvent('Share.Copy', { code: roomCode });
           })
           .catch(console.error);
       } catch (error) {}

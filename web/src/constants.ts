@@ -21,6 +21,7 @@ export const REDUX_ACTIONS = {
   CARD_MODAL_CLOSE: 'CARD_MODAL_CLOSE',
   CHANGE_ROUND: 'CHANGE_ROUND',
   SET_LANG: 'SET_LANG',
+  SET_LANG_AUTO: 'SET_LANG_AUTO',
 };
 
 function generateRandomTopPosition() {
@@ -35,12 +36,23 @@ function generateRandomLeftPosition() {
   return Math.random() * offset;
 }
 
+/**
+ * When adding a new translation:
+ * - Add it here
+ * - Change the `TranslationsConfig` in utils/translations.ts
+ * - Change the `getUserLocaleWithConfig` mapping in utils/translations.ts
+ * - Add the new translation values in utils/translations/simpleText.ts
+ * - Add the new translation values in utils/translations/cards.ts
+ */
 export enum Translations {
   en = 'en',
-  // es = 'es',
+  es = 'es',
   lt = 'lt',
   it = 'it',
-  ptPT = 'ptPT',
+  ptPT = 'pt-PT',
+  ptBR = 'pt-BR',
+  zhCN = 'zh-CN',
+  ar = 'ar',
 }
 export const CARDS: { [key in string]: Card } = {
   card1: {

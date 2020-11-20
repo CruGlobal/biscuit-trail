@@ -18,6 +18,7 @@ import Header from 'components/Header';
 import { toast } from 'react-toastify';
 import { getTranslation } from 'utils/translations';
 import { useLangChange } from 'utils/hooks';
+import { logEvent } from 'utils/analytics';
 
 function EmptySpot({ spot, onDrop }: { spot: string; onDrop: Function }) {
   const [{ isOver }, drop] = useDrop({

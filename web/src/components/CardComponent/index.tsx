@@ -142,7 +142,7 @@ export function CardContent({ data, position }: { data: Card; position?: number 
       )}
     >
       {position && <div className="absolute text-xl text-white font-bold top-0 left-0 p-1">{position}</div>}
-      {getTranslationFront(data.id).map((l, i: number) => (
+      {getTranslationFront(data.id).map((l: { text: string; isBold?: boolean }, i: number) => (
         <div
           key={i}
           className={classNames('flex items-center justify-center text-white w-full text-center', {

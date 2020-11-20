@@ -10,6 +10,7 @@ import { Views } from 'App';
 import { getTranslation } from 'utils/translations';
 import Icon from 'components/Icon';
 import { useLangChange } from 'utils/hooks';
+import { logEvent } from 'utils/analytics';
 
 function HostNew({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
   const dispatch = useDispatch();
@@ -40,6 +41,9 @@ function HostNew({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
   return (
     <div className="flex items-center justify-center h-screen bg-yellow-500 flex-col">
       <img src={LOGO} alt="The Biscuit Trail" className="pb-4 w-4/5" style={{ maxWidth: 450 }} />
+      <div className="text-black font-bold text-center text-4xl mb-4" style={{ maxWidth: 420 }}>
+        {getTranslation('biscuitTrail')}
+      </div>
       <div
         className="bg-white text-gray-900 font-bold rounded-lg border shadow-lg p-4 sm:p-10  w-4/5 text-center"
         style={{ maxWidth: 350, maxHeight: 400 }}
@@ -60,6 +64,7 @@ function HostNew({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
                 // Look up code and validate that it exists
                 socketEvents.createRoom();
                 // onChangeNav(Views.GAME);
+                logEvent('Host.Create', { name });
               }}
               disabled={!name}
               type="primary"
@@ -77,9 +82,7 @@ function HostNew({ onChangeNav }: { onChangeNav: (type: Views) => any }) {
           </a>
           <div>
             <Button
-              onClick={() => {
-                onChangeNav(Views.LOGIN);
-              }}
+              onClick={() => onChangeNav(Views.LOGIN)}
               type="secondary"
               text={getTranslation('goBack')}
               className="w-full my-1 sm:my-4 justify-center"
