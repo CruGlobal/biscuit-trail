@@ -21,7 +21,7 @@ const Round2Modal = () => {
       image={ROUND1}
       header={getTranslation('round2')}
       title={getTranslation('round2Title')}
-      description={getTranslation('round2Desc')}
+      description=""
       buttonTitle={getTranslation('done')}
     />
   );

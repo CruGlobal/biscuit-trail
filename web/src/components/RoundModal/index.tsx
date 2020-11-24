@@ -31,7 +31,7 @@ export default function RoundModal({
       <div className="flex-1 items-center justify-center text-center text-darkBlue text-2xl sm:text-3xl leading-tight font-medium font-title px-3 sm:px-8 py-3 sm:py-10 mb-4 pb-3 sm:pb-8">
         <img src={image} alt="..." className="w-full m-auto" style={{ maxWidth: 200 }} />
         <div className="pt-8 px-4">{title}</div>
-        <div className="text-base pt-6 text-grey leading-6">{description}</div>
+        {description && <div className="text-base pt-6 text-grey leading-6">{description}</div>}
       </div>
       {content}
       <div
