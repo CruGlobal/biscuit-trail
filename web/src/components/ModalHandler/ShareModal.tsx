@@ -17,16 +17,15 @@ const ShareModal = () => {
   const dispatch = useDispatch();
   const roomCode = useSelector(({ auth }: RootState) => auth.room);
 
+  const text = `${getTranslation('shareJoin')} ${window.location.host} ${getTranslation('code')} ${roomCode}`;
+
   function handleShare() {
     // @ts-ignore
     if (navigator?.share && isFunction(navigator.share)) {
       try {
         navigator
-          //@ts-ignore
-          .share({
-            title: `${getTranslation('shareJoin')} ${roomCode}`,
-            url: Configs.ShareUrlBase + `?code=${roomCode}`,
-          })
+          // @ts-ignore
+          .share({ title: text, url: Configs.ShareUrlBase + `?code=${roomCode}` })
           .then(() => {
             toast.success(getTranslation('thanksSharing'));
             logEvent('Share.Copy', { code: roomCode });
@@ -48,7 +47,7 @@ const ShareModal = () => {
       onPress={() => dispatch(closeModal())}
       content={
         <div className="flex items-center flex-1 self-stretch justify-center py-6">
-          <CopyToClipboard text={`${getTranslation('shareJoin')} ${roomCode}`} onCopy={handleShare}>
+          <CopyToClipboard text={text} onCopy={handleShare}>
             <Button text={`${getTranslation('shareCode')} ${roomCode}`} type="secondary" icon="share-2" />
           </CopyToClipboard>
         </div>
