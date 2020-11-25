@@ -7,9 +7,8 @@ import { getTranslation } from 'utils/translations';
 import { logEvent } from 'utils/analytics';
 
 let API = 'http://localhost:8000';
-// TODO: Fill out the right url
 if (process.env.NODE_ENV === 'production') {
-  API = 'https://digital-biscuit-trail-devapi.herokuapp.com';
+  API = '/';
 }
 export const socket = io(API);
 
