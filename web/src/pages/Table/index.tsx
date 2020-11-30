@@ -27,15 +27,17 @@ function EmptySpot({ spot, onDrop }: { spot: string; onDrop: Function }) {
       onDrop(droppedItem);
     },
     collect: (monitor) => ({
+      // isOver: !!monitor.isOver({ shallow: true }),
       isOver: !!monitor.isOver(),
       canDrop: !!monitor.canDrop(),
     }),
   });
+
   return (
     <div className="emptySpot cardSize" ref={drop}>
       <div
         className={classNames(
-          'border-4 border-dashed border-darkGrey h-full w-full flex items-center justify-center text-2xl font-semibold text-black',
+          'border-4 border-dashed border-darkGrey h-full w-full flex items-center justify-center text-2xl font-semibold text-black ',
           { 'bg-lightBlue': isOver },
         )}
       >
@@ -319,7 +321,7 @@ function RoundSelect() {
   }, [round]);
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 pb-4">
       <div className="flex flex-col lg:flex-row">
         <div className="flex flex-row flex-wrap flex-1 justify-center">
           {isDone ? (
@@ -343,7 +345,7 @@ function RoundSelect() {
           )}
         </div>
       </div>
-      <div className="flex  items-center justify-center mt-3 fixed bottom-0 right-0 left-0">
+      <div className="flex items-center justify-center mt-3 fixed bottom-0 right-0 left-0">
         {isDone ? (
           <div className="text-lg bg-yellow-500 rounded-lg w-4/5 text-white text-center mb-2 p-4 font-semibold">
             {!isHost
@@ -409,7 +411,7 @@ function RoundDiscuss() {
   const dispatch = useDispatch();
   useLangChange();
   return (
-    <div className="pt-16">
+    <div className="pt-16 pb-4">
       <div className="flex flex-col lg:flex-row">
         <div className="flex flex-row flex-wrap flex-1 justify-center">
           <DiscussCards />
@@ -454,7 +456,7 @@ function RoundBoardOnly() {
   const roomCode = useSelector(({ auth }: RootState) => auth.room);
   const dispatch = useDispatch();
   return (
-    <div className="pt-16">
+    <div className="pt-16 pb-4">
       <div className="flex flex-col lg:flex-row">
         <div className="flex flex-row flex-wrap flex-1 justify-center">
           {board.map((boardItem: socketEvents.BoardItem, index: number) => {
@@ -503,7 +505,6 @@ function Table({ onLogout }: { onLogout: Function }) {
   // }, [board]);
 
   useEffect(() => {
-    // TODO: Wait for initial sync room, show some kind of loading state or something
     if (round === socketEvents.Rounds.Order) {
       dispatch(openModal('Round1'));
     } else if (round === socketEvents.Rounds.SelectEasy) {
