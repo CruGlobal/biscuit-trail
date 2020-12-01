@@ -1,7 +1,7 @@
 import { Card } from 'utils/types';
 
 export const Configs = {
-  YoutubeUrl: `https://www.youtube.com/watch?v=G317LXupvEQ`,
+  YoutubeUrl: `https://www.youtube.com/watch?v=FS1QjMo0XLw`,
 };
 
 export const BOARD_SIZE = 12;
