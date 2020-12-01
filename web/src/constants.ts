@@ -1,7 +1,6 @@
 import { Card } from 'utils/types';
 
 export const Configs = {
-  ShareUrlBase: `https://thebiscuittrail.com/`,
   YoutubeUrl: `https://www.youtube.com/watch?v=G317LXupvEQ`,
 };
 

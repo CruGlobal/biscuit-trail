@@ -25,7 +25,7 @@ const ShareModal = () => {
       try {
         navigator
           // @ts-ignore
-          .share({ title: text, url: Configs.ShareUrlBase + `?code=${roomCode}` })
+          .share({ title: text })
           .then(() => {
             toast.success(getTranslation('thanksSharing'));
             logEvent('Share.Copy', { code: roomCode });
