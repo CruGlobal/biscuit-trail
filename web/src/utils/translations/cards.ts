@@ -38,6 +38,10 @@ export const TranslationCards: {
         { text: 'ُممشاركة رسالة', isBold: true },
         { text: 'الإنجيل', isBold: true },
       ],
+      ['fr']: [
+        { text: 'Comment Partager', isBold: false },
+        { text: 'L’Evangile', isBold: true },
+      ],
     },
     backText: {
       en: {
@@ -103,6 +107,12 @@ export const TranslationCards: {
         َّّّ ُملخ ٍص بسي ٍط تعلمته في كنيستها. ولأنها كانت تستطيع استخدام المنديل في رسم صورة كانت واضحة
         ج ًّدا لـ«ماريا» التي أرادت أن ُتف ّكر في ما شاركته «آنيا» معها وأن تتح َّدث م ّرة أخرى قري ًبا.`,
       },
+      ['fr']: {
+        top: `Nous savons que l’Evangile est puissant. Normalement le partage de l’Evangile implique de savoir comment expliquer son message d’une manière claire et concise.`,
+        steps: `Trouvez un moyen d’expliquer l’Evangile d’une façon qui vous est naturelle. Ceci pourrait être simplement par des mots, un diagramme ou l’utilisation d’un tract.
+        \nMémorisez un ou deux versets bibliques qui expliquent clairement comment quelqu’un invite Jésus dans sa vie.`,
+        example: `Julia et Sunita étaient d’anciennes collègues qui se rencontraient pour déjeuner rapidement pendant leur journée de travail. Sunita voulait partager son témoignage avec Julia, et parlait donc du changement qui avait pris place dans sa vie depuis qu’elle était devenue chrétienne. En pleine conversation, elle s’est rendu compte qu’en fait c’était une occasion propice de partager avec Julia qui est Jésus et ce qu’Il a fait pour le monde entier et pas seulement dans sa vie. Elle a donc commencé à parler de Jésus, de sa mort et sa résurrection.`,
+      },
     },
   },
   card2: {
@@ -144,6 +154,11 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'ربط رسالة الإنجيل', isBold: true },
         { text: 'بالعمل والحياة', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Comment Etablir le Rapport', isBold: true },
+        { text: 'Entre L’Evangile, le Travail', isBold: false },
+        { text: 'et la Vie Quotidienne', isBold: false },
       ],
     },
     backText: {
@@ -198,6 +213,12 @@ export const TranslationCards: {
         ف ِّكر في مثا ٍل حدي ٍث كان ُيمكنك فيه أن تربط إيمانك بأحد التعليقات ِمن زملائك لك ّنك لم تفعل ذلك. وبد ًلا ِمن ال ّشعور بال ّذنب أو الندم، استخد ْم هذا المثال كفرص ٍة للتفكير في كيف ّية الر ّد المرة القادمة.`,
         example: `تعمل «إليزابيث» في بيئة شديدة ال ّضغط وكثي ًرا ما ناقشت هذا مع زملائها. سألت￼ «إليزابيث» الآخرين عن كيفّية تعاملهم مع الأمر، وعندما أعادوا عليها السؤال نفسه، أخبرتهم بأ ّنها ُتلقي ال ّضغط على يسوع الذي قال إ ّنه سيحمل أتعابنا لأ ّنه يعتني بنا، فأجابت إحدى زميلاتها بأ ّنها لم ُتف ّكر قط في تسليم شي ٍء ما لله ِمن قبل.`,
       },
+      ['fr']: {
+        top: `La vie, la mort et la résurrection de Jésus sont bien plus qu’un fait historique; Tout cela a un rapport avec chaque domaines de notre vie. Nous pouvons montrer cette cohérence à nos collègues non-chrétiens et les aider à voir l’impact de Christ dans nos vies.`,
+        steps: `Trouvez quelques sujets de conversation qui sont abordés sur votre lieu de travail où vous pourriez faire un lien avec l’oeuvre de Dieu dans le monde ou avec votre vie personnelle.
+        \nPensez à un exemple récent où vous auriez pu faire un rapprochement entre votre foi et le commentaire d’un collègue mais vous ne l’avez pas fait. Plutôt que de vous culpabiliser ou de le regretter, utilisez cet exemple comme une opportunité et pensez à la façon de répondre à cela la prochaine fois.`,
+        example: `Elizabeth travaille dans un environnement très stressant. Ses collègues et elle en discutent souvent. Elizabeth a demandé à ses collègues comment ils gèrent la situation. Quand ils lui ont renvoyé la question, elle leur a dit qu’elle essaie de donner son fardeau à Jésus qui dit qu’Il nous en décharge car il nous aime. Une collègue a répondu qu’elle n’avait jamais pensé à remettre quelque chose à Dieu.`,
+      },
     },
   },
   card3: {
@@ -234,6 +255,10 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'دعوتهم إلى المجتمع', isBold: true },
         { text: 'المسيحي', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Invitez-Les à Faire Partie d’Une', isBold: false },
+        { text: 'Communauté Chrétienne', isBold: true },
       ],
     },
     backText: {
@@ -294,6 +319,13 @@ export const TranslationCards: {
         ِ
         بالخروج مع هذه المجموعة ِمن الشباب وكان يرغب في قضاء المزيد ِمن الوقت معهم.`,
       },
+      ['fr']: {
+        top: `En voyant l’amour partagé dans une communauté chrétienne et l’oeuvre de Dieu dans la vie des autres chrétiens, on peut avoir un impact puissant sur les amis et les collègues non-chrétiens.`,
+        steps: `Y a t-il des activités courantes dans votre vie auxquelles vous pourriez inviter une personne non-chrétienne qui lui permettrait de faire la rencontre d’autres chrétiens?
+        \nInviter des non-chrétiens à l’église peut être une bonne façon de les associer à une communauté chrétienne.
+        \nS’ils ne désirent pas aller à l’église, y a t-il des événements sociaux auxquels vous pourriez les inviter? Ceux-ci peuvent être simples et aussi petits ou grands que vous le souhaitez.`,
+        example: `Hans et plusieurs de ses amis de l’église aiment faire du vélo ensemble le week-end. Hans a appris qu’un de ses associés de boulot, Benni, est passionné de vélo. Il l’a donc invité à rejoindre le groupe lors d’une de leurs sorties. Benni n’est pas chrétien et n’avait pas rencontré beaucoup de chrétiens auparavant mais il a aimé ce moment ensemble et veut passer davantage de temps avec eux.`,
+      },
     },
   },
   card4: {
@@ -336,6 +368,11 @@ export const TranslationCards: {
         { text: 'اكتساب الثّقة وحق', isBold: true },
         { text: 'التح ُّدث إلى حياة', isBold: true },
         { text: 'شخٍصما', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Développer la Confiance et', isBold: false },
+        { text: 'Mériter le Droit de', isBold: false },
+        { text: 'Parler Dans la Vie d’Autrui', isBold: true },
       ],
     },
     backText: {
@@ -421,6 +458,14 @@ export const TranslationCards: {
         لصراعاتها الخاصة أي ًضا، فأصبحت «تشو» أكثر انفتا ًحا بل وبدأت في طلب المشورة ِمن «فلورنس».
         ￼￼`,
       },
+      ['fr']: {
+        top: `Afin que quelqu’un puisse explorer les questions spirituelles avec nous, il faut que cette personne nous fasse confiance. Nous avons besoin d’apprendre à investir notre temps à aider autrui avec amour au fil des temps.`,
+        steps: `Priez pour eux - Demandez à Dieu de vous montrer son coeur pour cette personne et sa sagesse de façon à ce que vous puissiez être là pour elle.
+        \nApprenez et écoutez - Poser des questions, écoutez le partage des dialogues et trouvez des informations sur eux et leurs intérêts.
+        \nPassez du temps avec eux - trouvez du temps pour eux au travail quand vous le pouvez et cherchez le moyen de passer du temps avec eux en dehors du travail.
+        \nSoyez ouvert et honnête - soyez prêt à partager vos propres épreuves et soyez sensible si le cas se présente. Prenez patience - développez la confiance prend du temps. Soyez patient, persévérant et constant.`,
+        example: `Dans son nouveau travail très prenant, Nathalie prenait intentionnellement le temps de parler à sa collègue Catherine pendant quelques minutes tous les jours et lui posait des questions sur sa vie et sur sa famille. Au bout de deux mois Catherine a également posé les mêmes questions à son tour ainsi que des questions plus profondes sur Dieu et sa foi et elles ont discuté de certaines difficultés que Catherine éprouvait envers l’église et la religion. Malgré leur divergence de point de vue sur certaines choses, Catherine était intéressée par la façon de voir de Nathalie et le fait de se rendre à l’église.`,
+      },
     },
   },
   card5: {
@@ -453,6 +498,10 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'افتح الكتاب الم ُمقدَّس', isBold: true },
         { text: 'مع زميلك', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Ouvrir la Bible', isBold: true },
+        { text: 'avec Votre Collegue', isBold: false },
       ],
     },
     backText: {
@@ -529,6 +578,14 @@ export const TranslationCards: {
         ق ّصته عن كيف أصبح مسيح ّيا، وعلى الرغم ِمن أ ّن «لوك» لم يأ ِت ِمن خلفي ٍة ُمتد ّين ٍة فإنه كان ُمهت ّما ببعض الآراء
         الروحية التي شاركها «ريتش» معه. وباح «لوك» لـ»ريتش» بأ ّنه ُيواجه مشكلة في مسامحة شخ ٍص ما و َذ َكر له «ريتش» أ ّن الكتاب ال ُمق ّدس لديه الكثير ليقوله عن الغفران. أثار هذا اهتمام «لوك» ووافق على أن ُيقابل «ريتش» بعدالعملللتفكيرفيمايقولهالكتابالُمقّدس،وقرآمًعاق ّصةالمرأةعندالبئروتطّورالأمرإلىنقاشروحي أعمق.`,
       },
+      ['fr']: {
+        top: `Une des meilleures façons de rencontrer Jésus est de lire la Parole de Dieu pour eux-mêmes.`,
+        steps: `Certaines personnes seront naturellement curieuses à propos de la Bible alors que d’autres auront peu de connais- sance ou peu d’intérêt. Trouvez la bonne occasion demandera une sensibilité à la prière et de la patience.
+        \nTrouvez l’occasion de mentionner le rapport entre un problème auquel vous avez fait face et quelque chose que vous avez lu (entendu ou partagé) dans la Bible. Beaucoup d’individus n’ont aucune idée que la Bible parle des problèmes de la vie quotidienne.
+        \nSi quelqu’un est intéressé pour lire la Bible, vous pourriez leur en prêter une ou leur suggérer par quelle partie commencer la lecture. Ne supposez pas qu’ils connaissent la structure des livres et des versets aussi bien que vous. Pour une bonne histoire narrative, commencez par l’Evangile selon Saint Luc. l’Evangile selon Saint Jean fournit une synthèse de la Bible.
+        \nSoyez prêt à discuter avec vos collègues de ce qu’ils ont lu s’ils en ont envie en n’oubliant pas que tout cela leur sera peut-être inconnu.`,
+        example: `Pendant les 10 mois que Richard avait travaillé avec Luc, ils étaient devenus bons amis. Richard avait partagé avec Luc comment il était devenu chrétien et bien que Luc ne soit pas d’un milieu chrétien il était intéressé par certaines idées spirituelles que Richard avait partagé avec lui. Luc a confié à Richard qu’il avait du mal à pardonner à quelqu’un et Richard a mentionné que La Bible contenait en fait beaucoup de passages au sujet du pardon. Cela a attiré l’attention de Luc et donc il a décidé de rencontrer Richard après le travail pour voir ce que la Bible disait. Richard a imprimé l’histoire de la femme au puits sur une feuille de papier et ils ont étudié le texte; Ceci a mené à une discussion spirituelle plus en profondeur.`,
+      },
     },
   },
   card6: {
@@ -566,6 +623,12 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'اكتشاف تص ُّور', isBold: true },
         { text: 'شخ ٍص ما عن يسوع', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Comment les Autres', isBold: false },
+        { text: 'Personnes', isBold: false },
+        { text: 'Perçoivent la', isBold: true },
+        { text: 'Personne de Jesus', isBold: true },
       ],
     },
     backText: {
@@ -629,6 +692,13 @@ export const TranslationCards: {
         example: `كان «مايك» مستشا ًرا ُمبت ِد ًئا ويعمل لوق ٍت ُمتأ ّخر ويتناول الطعام الجاهز مع زميله «ليون»، وأبدى «ليون» فضو ًلا￼ ٍ
         حول إيمان «مايك» وسأله عن مجموعته الصغيرة المسائية في الكنيسة. وفي أثناء تناولهما الطعام، ق َّرر «مايك» أن يسأل «ليون» بعض الأسئلة الأعمق التي تتعلَّق بمفهومه عن الله ويسوع، فشارك «ليون» أفكاره ُمو ّض ًحا أ ّنه يظ ّن أ ّن يسوع كان رج ًلا صال ًحا لك ّنه ليس الله. استمع «مايك» إليه وشاركه بعض أفكاره الخا ّصة، وكان النقاش ُمفعًمابالحيوّيةلكّنهكانودًّيا،وفيالنهايةسأل«مايك»زميله«ليون»عماإذاكانيرغبفيقراءةالكتاب ال ُمق ّدس معه في وق ٍت ما لمعرفة ما قاله يسوع عن نفسه، فوافق «ليون» على ذلك.`,
       },
+      ['fr']: {
+        top: `Comprendre la perception qu’un non-chrétien a de Jésus peut vous aider à explorer ses croyances spirituelles. Ainsi vous saurez comment guider la conversation et quelles questions ou sujets de l’évangile s’appliquent à sa situation.`,
+        steps: `Pensez à des questions qui vont évaluer leur perception de Jésus, par exemple ‘Qui est Dieu selon vous?’ ou ‘Que pensez-vous de Jésus?’
+        \nAssurez-vous de montrer que vous êtes vraiment intéressé par leurs opinions et leurs idées.
+        \nEntraînez-vous à expliquer ce que Jésus représente pour vous et pourquoi vous êtes arrivé à cette conclusion.`,
+        example: `Michel, un consultant junior travaillait tard, se nourrissait de fast-food avec son collègue Léon. Léon a fait preuve de curiosité au sujet de la foi de Michel et s’est renseigné sur ses réunions en petit groupe le soir pendant la semaine. Tout en mangeant, Michel a décidé d’approfondir ses questions en demandant à Léon quelle était sa perception de Dieu et de Jésus. Léon a répondu qu’il pensait que Jésus était un homme bon mais pas Dieu. Michel a écouté et partagé certaines de ses pensées avec lui. A la fin Michel a demandé à Léon s’il aimerait étudier la Bible un de ces jours pour voir ce que Jésus avait à dire sur lui-même. Léon a accepté.`,
+      },
     },
   },
   card7: {
@@ -667,6 +737,12 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'الّصلاةِمنأجل', isBold: true },
         { text: 'الناس في العمل', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Prier', isBold: true },
+        { text: 'pour les Personnes', isBold: false },
+        { text: 'avec Lesquelles on', isBold: false },
+        { text: 'Travaille', isBold: false },
       ],
     },
     backText: {
@@ -732,6 +808,13 @@ export const TranslationCards: {
         يسوع وسلامه. كان تأثر المرأة واض ًحا، فشكرت «ريتشيل» بدموع، ومنذ ذلك الوقت صارت أكثر
         انفتا ًحا على الحديث مع «ريتشيل».`,
       },
+      ['fr']: {
+        top: `Dieu nous donne des opportunités régulières de prier pour des situations qui se présentent lors d’interactions avec des collègues ou des clients. Certaines de ces opportunités ne se repro- duiront peut-être jamais alors que d’autres nécessiteront de prier d’une façon constante et précise pendant plusieurs semaines ou même plusieurs mois.`,
+        steps: `Soyez conscients qu’une personne sur votre lieu de travail peut avoir besoin de vos prières. Prenez-en note sur votre portable ou sur un carnet car cela vous aidera à prier d’une manière plus constante et plus précise.
+        \nCertains non-chrétiens vous demanderont de prier pour eux s’ils savent que vous êtes quelqu’un qui prie, particulièrement dans des circonstances graves. Vous pouvez aussi offrir de prier pour quelque chose qu’on vous a partagé. De toute manière, soyez sûrs que vous PRIEZ et que vous leur dites plus tard.
+        \nDans un cas comme dans l’autre, assurez-vous de prier et dites-leur ultérieurement que vous l’avez fait. Saisissez un moment favorable pour demander de prier avec quelqu’un. Cela peut leur donner la paix, leur apporter un certain réconfort et peut également ouvrir la voie à un dialogue plus approfondi.`,
+        example: `Rachael est infirmière communautaire. Lors d’une de ses visites à domicile, elle a remarqué que sa patiente était particulièrement bouleversée. La femme venait d’apprendre qu’elle avait un cancer. Rachel a encouragé cette femme à partager avec elle ce qu’elle ressentait. A la fin de sa visite, Rachael, encouragée par Dieu, a demandé à sa patiente si elle était d’accord pour prier avec elle. La femme a accepté et Rachael a donc prié pour qu’elle puisse connaître le réconfort et la paix apportés par Jésus. Sa patiente a été visiblement émue et a serré Rachael fort dans les bras pour la remercier, les larmes aux yeux.`,
+      },
     },
   },
   card8: {
@@ -769,6 +852,11 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'نعيش حياة تتطلَّب', isBold: true },
         { text: 'تفسيرًا', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Vivre une Vie qui', isBold: false },
+        { text: 'Exige une', isBold: true },
+        { text: 'Explication', isBold: true },
       ],
     },
     backText: {
@@ -824,6 +912,13 @@ export const TranslationCards: {
         بعضهم البعض ج ّي ًدا. انضم زميل جديد لهم وبدأ باقي المكتب يص ّعبون ِمن مه ّمة انضمامه
         إلى العمل في الشركة من خلال تحميله أعباء عمل لا ُتحت َمل ِمن جميع الأعمال غير ال ُمستح ّبة بالإضافة إلى التح ّدث ِمن وراء ظهره. تع ّرض «أموس» إلى إغراء أن يسخر مع الآخرين ِمن الزميل الجديد لكنه ق َّرر أ ّنه بصفته تاب ًعا إلى المسيح يجب أن يكون عو ًنا وتشجي ًعا له، فكان لطي ًفا معه وعرض عليه المساعدة، حينئ ٍذ بدأ «أموس» ملاحظة أ ّن الزملاء الآخرين يبدون الآن أق ّل ارتيا ًحا لفكرة إعطاء «الشاب الجديد» وق ًتا عصي ًبا وصاروا أكثر لط ًفا معه أي ًضا.`,
       },
+      ['fr']: {
+        top: `Nos actions dans notre vie quotidienne peuvent être un témoignage évident de l’amour de Dieu face à nos collègues.`,
+        steps: `Comment le fait de suivre Jésus peut changer la manière dont on vit sa vie au travail?
+        \nPensez à votre réaction si quelqu’un vous demandait pourquoi vous avez agi de cette façon. Rappelez-vous que vous ne voulez pas prêcher mais plutôt faire un lien entre un acte de gentillesse et votre foi.`,
+        example: `Amos travaille dans une entreprise où une grande partie du personnel travaille depuis deux ans et où tout le monde se connait bien. Un nouvel associé vient de commencer à y travailler. Son adaptation est rendue difficile par ses collègues qui lui donnent une charge insupportable de travail, des tâches peu attrayantes et qui parlent derrière son dos. Amos est tenté de rire avec les autres mais en tant que disciple de Jésus il devrait plutôt aider et encourager son nouvel associé. Il a décidé d’être gentil avec lui et lui a offert son soutien.
+        Amos a commencé à remarquer que les autres associés se sentaient moins à l’aise quand ils se moquaient du “nouvel associé” et qu’eux aussi devenaient plus agréables envers lui.`,
+      },
     },
   },
   card9: {
@@ -862,6 +957,12 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'اكتشاف الخلفية', isBold: true },
         { text: 'الروحية لشخ ٍص ما', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Trouver des', isBold: false },
+        { text: 'Renseignements', isBold: true },
+        { text: 'sur la Spiritualité', isBold: true },
+        { text: 'de Quelqu’un', isBold: true },
       ],
     },
     backText: {
@@ -918,6 +1019,12 @@ export const TranslationCards: {
         زميله بعض الأسئلة القليلة، فسأله «سانجاي» بتو ّتر: «هل تقول إ ّنك مؤم ٌن؟» تو ّقف زميله ُبرهة ٍ
         ث ّم بدأ في الحديث عن نشأته و ُمعتقداته عن الله وبعض ِمن مشاعره الحالية نحو الإيمان. لم ي ُكن «سانجاي» يعرف الكثير عن ال ُمعتقدات الدينية التي كان يشرحها لذا اختار أن يكون ُمنص ًتا و ُمنتب ًها، والآن عندما يرى أحدهما الآخر يتح ّول الحديث بينهما بشك ٍل طبيعي إلى مستوى أعمق.`,
       },
+      ['fr']: {
+        top: `Poser des questions sur la spiritualité d’une personne peut être une façon naturelle d’entamer un dialogue spirituel.`,
+        steps: `Réfléchissez à quelques questions que vous pourriez poser sur la spiritualité d’une personne qui ne seraient pas gênantes ou vexantes.
+        \nPensez à certains contextes de travail dans lesquels vous pourriez poser ces questions.`,
+        example: `Sanjay, un jeune ingénieur, était en déplacement avec un ingénieur qu’il ne connaissait pas bien mais qu’il admirait beaucoup. La conversation s’est orientée sur leurs projets pour le week-end. Sanjay a mentionné qu’il allait à l’église et son collègue lui a posé quelques questions. Sanjay a répondu avec nervosité ‘Est-ce que vous pouvez dire que vous êtes croyants?’ Son collègue a fait une pause puis il a commencé a parler de son éducation, sa croyance en Dieu et de ses sentiments actuels au sujet de la foi. Sanjay s’est senti un peu dépassé par la situation mais il a écouté avec intérêt ce que disait son collègue. A présent quand ils se voient, la conversation passe naturellement à un niveau plus approfondi.`,
+      },
     },
   },
   card10: {
@@ -954,6 +1061,11 @@ export const TranslationCards: {
       ['ar']: [
         { text: 'أخبرهم أنّك', isBold: true },
         { text: 'مسيحّيُممؤمن', isBold: true },
+      ],
+      ['fr']: [
+        { text: 'Révéler', isBold: false },
+        { text: 'le Fait d’être', isBold: true },
+        { text: 'Chrétien', isBold: true },
       ],
     },
     backText: {
@@ -1012,6 +1124,12 @@ export const TranslationCards: {
         للأمور التي «لا تفعلها».`,
         example: `تولّى «إيان» ُمؤ َّخ ًرا المنصب الذي كان يحلُم به كمستشار تقني في الإنتاج التليفزيوني، وكان￼ مسرو ًرا لأ ّنه وجد فريق العمل ودو ًدا. وفي نهاية أحد أيام العمل بدأ العديد ِمن ال ّزملاء يتح ّدثون عن خططهم لقضاء السهرة وكان «إيان» ُمتر ّد ًدا أن ُيخبر المجموعة بأ ّنه ذاهب إلى مجموع ٍة صغير ٍة لدراسة الكتاب ال ُمق ّدس في هذا المساء خو ًفا ِمن أن يوصموه بالغرابة، لك ّنه ق ّرر أن يذ ُكر الأمر بطريق ٍة طبيعي ٍة. حينئ ٍذ سألته إحدى النساء ع ّما إذا كان ُمتد ّي ًنا، فأجاب «إيان» أ ّنه في الحقيقة شخص ي َّتبع يسوع. ِمن ال ُمثير للدهشة، أ ّن معظمهم كانوا مرتاحين على عكس ما كان «إيان» يخشى، وأشعل هذا رغبته في أن يعيش ِمن أجل المسيح في العمل.`,
       },
+      ['fr']: {
+        top: `Trouver une façon naturelle de révéler à vos collègues que vous êtes chrétien au tout début de votre interaction met en place le contexte de ce que vous direz ou ferez ultérieurement et démontre l’importance que la foi occupe dans votre vie.`,
+        steps: `N’oubliez pas que vous n’avez pas besoin d’être parfait pour être chrétien. Dites-vous simplement que vous croyez en Jésus et que vous essayez de le suivre. Les gens réagiront positivement envers une personne humble plutôt qu’envers une personne ‘vertueuse’.
+        \nPensez à la façon de soulever la question le plus facilement possible. Soyez positif et mentionnez des activités auxquelles vous participez mais surtout évitez une liste de choses que “vous ne faites pas.”`,
+        example: `Lors de l’introduction de Caleb dans son nouvel emploi, il y a eu un repas avec plusieurs dirigeants de l’entreprise. Il avait conscience de vouloir faire bonne impression mais il a décidé de parler ouvertement de son engagement dans l’église et le fait qu’il est chrétien lorsqu’un des cadres supérieurs a abordé le sujet. Pendant que Caleb se mettait à table, un de ses nouveaux collègues s’est tourné vers lui et lui a dit, “j’ai beaucoup de respect pour une personne de votre âge qui parle si ouvertement de sa foi.”`,
+      },
     },
   },
   card11: {
@@ -1043,6 +1161,10 @@ export const TranslationCards: {
       ],
       ['zh-CN']: [{ text: '建立友誼', isBold: false }],
       ['ar']: [{ text: 'بناء صداقة', isBold: true }],
+      ['fr']: [
+        { text: 'Forger', isBold: false },
+        { text: 'une Amitié', isBold: true },
+      ],
     },
     backText: {
       en: {
@@ -1099,6 +1221,12 @@ export const TranslationCards: {
         «توم» ِمن فريق آخر واكتشف أ ّن لديه شغ ًفا نحو العدالة الاجتماعية. اقترح توم كتا ًبا عن هذا ٍ
         الموضوع على «جيمس»، وفي أثناء قراءته طرح بعض الأسئلة على «توم» وكانا ُيناقشان أفكارالكتاب.اقترح«جيمس»بعدذلككتاًبامسيحًّياعلى«توم»وبدآفيمناقشتهمًعا، واستطاع الاثنان أن يعرفا بعضهما البعض على نحو أفضل خلال هذه العملية ونمت علاقتهما الآن إلى التفاعلات الاجتماعية خارج العمل.`,
       },
+      ['fr']: {
+        top: `Jésus nous a montré comment créer des liens d’amitié avec des non-chrétiens. En développant ces relations avec des personnes sur notre lieu de travail nous avons davantage l’occasion de leur prouver l’amour de Dieu envers nous.`,
+        steps: `Pensez à vos relations positives au travail que ce soit actuellement ou antérieurement. “Qu’est-ce qui a contribué à en faire de bonnes relations?”
+        \nIdentifiez au travail les relations que vous aimeriez faire plus d’effort pour développer. Faites une liste de simples choses à faire pour consolider ces relations.`,
+        example: `Jacques veut se faire des amis à son nouveau lieu de travail dans une grande marque de publicité. Il a fait la connaissance de Thomas appartenant à une autre équipe et a découvert sa passion pour la justice sociale. Thomas a suggéré un livre traitant de ce sujet à Jacques. Au fur et à mesure qu’il le lisait, il posait des questions à Thomas et ils discutaient ensemble des thèmes du livre. Jacques a maintenant suggéré un livre chrétien à Thomas et ils ont commencé à en discuter. Ils ont appris à mieux se connaître de cette façon et ont commencé à passer du temps ensemble en dehors du travail.`,
+      },
     },
   },
   card12: {
@@ -1130,6 +1258,10 @@ export const TranslationCards: {
       ],
       ['zh-CN']: [{ text: '分享你的生命故事', isBold: false }],
       ['ar']: [{ text: 'مشاركةق ّصتك', isBold: true }],
+      ['fr']: [
+        { text: 'Partager', isBold: false },
+        { text: 'son Histoire', isBold: true },
+      ],
     },
     backText: {
       en: {
@@ -1181,6 +1313,12 @@ export const TranslationCards: {
         steps: `اكت ْب ق ّصتك التي ُتل ّخص مقابلتك مع يسوع (في نحو 3 دقائق أو أقل) واحفظها في ذاكرتك. تد َّرب￼￼ على سرد ق ّصتك مع واح ٍد ِمن أفراد المجموعة.
         ف ِّكر في الأحداث أو الأفكار التي تدور في حياتك ويلعب فيها الإيمان دو ًرا كبي ًرا، وناقش مع المجموعة ُطرق ربطها مع المواقف في العمل.`,
         example: `تعمل «روث» و»مارا» م ًعا في شركة تصميمات، وعندما أصبحت الاثنتان صديق َت ْين صارتا￼ تتشاركنبمزيٍد ِمنالانفتاحمعبعضهماالبعضوشعرت«روث»أن«مارا»لديهابعض الاهتمام بالأمور الروحية. وفي أثناء مناقشتهما للعلاقات الرومانسية، كشفت «روث» لـ»مارا» عن علاق ٍة انتهت بالانفصال وكيف كافحت مع أزمة الثقة لبعض الوقت. وشاركت معها «روث» أيًضاكيفأنعلاقتهابيسوعساعدتهاعلىتعلُّمالجدارةبالثقةالحقيقية،فأثارهذااهتمام«مارا» بمعرفة المزيد عن يسوع.`,
+      },
+      ['fr']: {
+        top: `Votre expérience personnelle consiste à voir comment Jésus change votre vie peut avoir un impact important sur les autres.`,
+        steps: `Ecrivez le récit de votre rencontre avec Jésus (3 minutes environ) et apprenez-la par coeur. Entraînez-vous à raconter votre histoire avec un membre du groupe.
+        \nPensez à une situation au travail ou à un sujet qui revient souvent dans la conversation (ex: le stress, l’argent) où votre foi vous a aidée à voir les choses d’une autre façon. Comment pourriez-vous expliquer cela à un collègue?`,
+        example: `Ruth et Mara travaillent ensemble pour un bureau d’études. Étant devenues amies, elles parlent plus ouvertement ensemble et Ruth a l’impression que Mara s’intéresse aux choses spirituelles. Lors d’une discussion sur les relations romantiques, Ruth a confié à Mara qu’elle avait eu le coeur brisé et qu’elle en avait beaucoup souffert. Ruth lui a aussi révélé que sa relation avec Jésus l’a beaucoup aidée à pardonner. Mara a été frappée par la vulnérabilité de Ruth et elles ont continué à parler de leur foi et du pardon.`,
       },
     },
   },

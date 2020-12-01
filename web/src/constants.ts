@@ -39,6 +39,7 @@ function generateRandomLeftPosition() {
  * When adding a new translation:
  * - Add it here
  * - Change the `TranslationsConfig` in utils/translations.ts
+ * - Download the flag as an "SVG" from https://openmoji.org/library/#search=flag, add it to the /components/Flag/index.ts file
  * - Change the `getUserLocaleWithConfig` mapping in utils/translations.ts
  * - Add the new translation values in utils/translations/simpleText.ts
  * - Add the new translation values in utils/translations/cards.ts
@@ -52,6 +53,7 @@ export enum Translations {
   ptBR = 'pt-BR',
   zhCN = 'zh-CN',
   ar = 'ar',
+  fr = 'fr',
 }
 export const CARDS: { [key in string]: Card } = {
   card1: {
