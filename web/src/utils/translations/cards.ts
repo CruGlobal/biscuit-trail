@@ -740,9 +740,8 @@ export const TranslationCards: {
       ],
       ['fr']: [
         { text: 'Prier', isBold: true },
-        { text: 'pour les Personnes', isBold: false },
-        { text: 'avec Lesquelles on', isBold: false },
-        { text: 'Travaille', isBold: false },
+        { text: 'pour les Personnes avec', isBold: false },
+        { text: 'Lesquelles on Travaille', isBold: false },
       ],
     },
     backText: {

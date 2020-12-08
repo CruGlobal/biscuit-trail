@@ -75,7 +75,7 @@ export function FixedCard({ data }: { data: Card }) {
       style={{ backgroundColor: data.backgroundColor }}
       onClick={() => dispatch(openCardModal({ card: data }))}
     >
-      <CardContent data={data} />
+      <CardContent data={data} isStatic={true} />
     </div>
   );
 }
@@ -96,7 +96,7 @@ export function SelectCard({
       style={{ backgroundColor: data.backgroundColor }}
       onClick={() => onSelect(!isSelected)}
     >
-      <CardContent data={data} />
+      <CardContent data={data} isStatic={true} />
       <div className="absolute top-0 left-0 m-2">
         <Button
           onClick={(e) => {
@@ -121,7 +121,7 @@ export function DiscussCard({ data, users }: { data: Card; users: User[] }) {
       style={{ backgroundColor: data.backgroundColor }}
       onClick={() => dispatch(openCardModal({ card: data }))}
     >
-      <CardContent data={data} />
+      <CardContent data={data} isStatic={true} />
       <div className="absolute m-2" style={{ top: -15, left: -15 }}>
         {users.map((u, i) => (
           <div key={`${u.id}_${i}`} className="absolute top-0" style={{ left: 20 * i }}>
@@ -133,13 +133,14 @@ export function DiscussCard({ data, users }: { data: Card; users: User[] }) {
   );
 }
 
-export function CardContent({ data, position }: { data: Card; position?: number }) {
+export function CardContent({ data, position, isStatic }: { data: Card; position?: number; isStatic?: boolean }) {
   useLangChange();
   return (
     <div
-      className={classNames(
-        'flex items-center justify-center w-full h-full leading-tight sm:leading-snug text-xs xs:text-base sm:text-lg xl2:text-xl flex-col font-thin relative px-1 sm:px-2',
-      )}
+      className={classNames('flex items-center justify-center w-full h-full flex-col font-thin relative px-1 sm:px-2', {
+        'leading-3 sm:leading-5 lg:leading-4 xl:leading-5 text-xs xs:text-base sm:text-lg lg:text-sm xl:text-lg xl2:text-xl': !isStatic,
+        'leading-3 sm:leading-5 text-xs xs:text-base sm:text-lg xl:text-xl': isStatic,
+      })}
     >
       {position && <div className="absolute text-xl text-white font-bold top-0 left-0 p-1">{position}</div>}
       {getTranslationFront(data.id).map((l: { text: string; isBold?: boolean }, i: number) => (
@@ -164,7 +165,7 @@ export function BasicLargeCard({ data }: { data: Card }) {
       style={{ backgroundColor: data.backgroundColor }}
       onClick={() => dispatch(openCardModal({ card: data }))}
     >
-      <CardContent data={data} />
+      <CardContent data={data} isStatic={true} />
     </div>
   );
 }
