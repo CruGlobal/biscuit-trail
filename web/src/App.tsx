@@ -33,6 +33,8 @@ function AppRoutes() {
   }
 
   useEffect(() => {
+    // TODO: Remove this. Just quick testing staging deployments
+    console.log(process.env.NODE_ENV);
     socketEvents.socket.on('disconnect', (reason: string) => {
       toast.error(getTranslation('disconnected'));
       if (reason === 'io server disconnect') {
