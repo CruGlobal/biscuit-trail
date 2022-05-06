@@ -29,6 +29,7 @@ export function getTranslationBack(cardId: string) {
 }
 export const TranslationsConfig: { [key in Translations]: { name: string; flag: FlagName; folder?: string } } = {
   [Translations.en]: { name: 'English', flag: 'us', folder: 'en' },
+  [Translations.mn]: { name: 'Монгол', flag: 'mongolia', folder: 'mn' },
   [Translations.lt]: { name: 'Lietuvis', flag: 'lithuania', folder: '' },
   [Translations.it]: { name: 'Italiano', flag: 'italy', folder: 'it' },
   [Translations.ptPT]: { name: 'Português - Portugus', flag: 'portugal', folder: 'pt-pt' },
@@ -53,6 +54,7 @@ export function getUserLocaleWithConfig(): Translations {
     }));
   const mapping: { [key in string]: Translations | Translations[] } = {
     en: Translations.en,
+    mn: Translations.mn,
     lt: Translations.lt,
     it: Translations.it,
     pt: [Translations.ptPT, Translations.ptBR],

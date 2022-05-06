@@ -4,6 +4,7 @@ import { ReactComponent as Brazil } from '../../assets/flags/brazil.svg';
 import { ReactComponent as Italy } from '../../assets/flags/italy.svg';
 import { ReactComponent as Portugal } from '../../assets/flags/portugal.svg';
 import { ReactComponent as Mexico } from '../../assets/flags/mexico.svg';
+import { ReactComponent as Mongolia } from '../../assets/flags/mongolia.svg';
 import { ReactComponent as Spain } from '../../assets/flags/spain.svg';
 import { ReactComponent as Lithuania } from '../../assets/flags/lithuania.svg';
 import { ReactComponent as China } from '../../assets/flags/china.svg';
@@ -22,6 +23,7 @@ export function getFlag(name: FlagName, iconProps?: React.SVGProps<SVGSVGElement
     case 'italy': return <Italy {...iconProps} />;
     case 'portugal': return <Portugal {...iconProps} />;
     case 'mexico': return <Mexico {...iconProps} />;
+    case 'mongolia': return <Mongolia {...iconProps} />;
     case 'spain': return <Spain {...iconProps} />;
     case 'lithuania': return <Lithuania {...iconProps} />;
     case 'china': return <China {...iconProps} />;
@@ -36,6 +38,7 @@ export type FlagName =
   | 'brazil'
   | 'portugal'
   | 'mexico'
+  | 'mongolia'
   | 'spain'
   | 'lithuania'
   | 'china'

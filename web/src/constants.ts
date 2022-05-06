@@ -47,6 +47,7 @@ function generateRandomLeftPosition() {
 export enum Translations {
   en = 'en',
   es = 'es',
+  mn = 'mn',
   lt = 'lt',
   it = 'it',
   ptPT = 'pt-PT',

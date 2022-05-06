@@ -315,7 +315,7 @@ const setRedisSocketStore = () => setRedis('SocketStore', SocketStore);
   };
   const getMyUser = () => getUser(getMyClient()?.userId);
   const setMyUserId = (id: string) => {
-    SocketStore.clients[socket.id] = SocketStore.clients[socket.id] || { userId: id, code: null };
+    SocketStore.clients[socket.id].userId = id;
     setRedisSocketStore();
   };
   const setMyCode = (code: RoomCode) => {
