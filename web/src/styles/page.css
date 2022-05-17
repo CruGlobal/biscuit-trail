@@ -19,6 +19,7 @@ code {
   height: 10vw;
   width: 13.3vw;
   margin: 10px;
+  cursor: pointer;
 }
 
 .cardSizeLarge {

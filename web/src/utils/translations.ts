@@ -37,6 +37,7 @@ export const TranslationsConfig: { [key in Translations]: { name: string; flag: 
   [Translations.zhCN]: { name: '繁體中文', flag: 'china-hk', folder: 'zh-cn' },
   [Translations.ar]: { name: 'عربى', flag: 'saudi-arabia', folder: 'ar' },
   [Translations.fr]: { name: 'Français', flag: 'france', folder: 'fr' },
+  [Translations.mn]: { name: 'Монгол', flag: 'mongolia', folder: 'mn' },
 };
 
 export function getUserLocaleWithConfig(): Translations {
@@ -53,6 +54,7 @@ export function getUserLocaleWithConfig(): Translations {
     }));
   const mapping: { [key in string]: Translations | Translations[] } = {
     en: Translations.en,
+    mn: Translations.mn,
     lt: Translations.lt,
     it: Translations.it,
     pt: [Translations.ptPT, Translations.ptBR],

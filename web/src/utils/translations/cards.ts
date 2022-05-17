@@ -12,6 +12,10 @@ export const TranslationCards: {
         { text: 'Sharing', isBold: false },
         { text: 'the Gospel', isBold: true },
       ],
+      mn: [
+        { text: 'Сайн мэдээ', isBold: true },
+        { text: 'хуваалцах', isBold: true },
+      ],
       lt: [
         { text: 'Dalintis', isBold: false },
         { text: 'Evangelija', isBold: true },
@@ -51,6 +55,14 @@ export const TranslationCards: {
           \nMemorize one or two Bible verses that clearly explain how someone invites Christ into their life.
           \nNeed extra help: See the “For More Information” card for helpful tools.`,
         example: `Anya has had many conversations with her friend Maria over the last year about Anya’s faith. Maria’s questions were simple and usually about Anya’s choices or behavior, but recently they have become deeper. One afternoon over coffee Anya sensed God’s urging that it was time to ask Maria if she wanted to know this Jesus personally. Anya was thankful that she had practiced using a simple outline she had learned at her church and that she could use a napkin to draw a picture that was very clear to Maria. Maria wants to think about what Anya shared and talk again soon.`,
+      },
+      mn: {
+        top: `Сайн мэдээ нь хүчирхэг гэдгийг бид мэднэ. Сайн мэдээ хуваалцахын тулд үүнийг хэрхэн ойлгомжтой бөгөөд товчхон тайлбарлахаа мэддэг байх хэрэгтэй.`,
+        steps: `Сайн мэдээг тодорхой тайлбарлах арга, хэрэгсэл бодож олоорой.
+          \nУг аргаа хэрхэн хэрэглэхээ сайн мэддэг байгаарай.
+          \nХэн нэгэн хэрхэн Есүсийг хувьчлан таньж мэдэж болохыг зургаар тайлбарлаж сураарай. (цаас эсвэл салфетка дээр зурсан ч болно.)
+          \nХэн нэгэн Христийг амьдралдаа яаж урьж, хүлээж авч болох тухай тодорхой тайлбарласан 1-2 Библийн эшлэл цээжлээрэй.`,
+        example: `Ариунаа өөрийн итгэл үнэмшлийн талаар найз Маралаатайгаа өнгөрсөн жилийн туршид нилээд хэдэн удаа ярилцсан. Маралаагийн асуултууд ихэвчлэн Ариунаагийн сонголт, зан араншингийн тухай энгийн асуултууд байдаг байсан боловч саяханаас гүн гүнзгий асуултууд болж хувирсан. Ариунаа нэгэн өдөр кофе ууж байх зуураа “Есүсийн тухай хувьчлан таньж мэдэхийг хүсэж байгаа эсэхийг Маралаагаас асуух цаг нь болсон гэж Бурхан өөрт нь сануулсныг” мэдэрсэн. Ариунаа цуглаан дээрээ байхдаа сайн мэдээг хэрхэн энгийнээр ярих тухай сурсан мөн үүнийгээ ойлгомжтойгоор Маралаад зургаар тайлбарлаж чадсандаа талархалтай байлаа. Маралаа Ариунаагийн хуваалцсан зүйлийн талаар бодож, дахин энэ тухай ярилцахыг хүссэн.`,
       },
       lt: {
         top: `Mes žinome, kad Evangelijos žinia yra galinga. Kai dalinamės Evangelija, svarbu šią žinią perteikti aiškiai ir glaustai.`,
@@ -122,6 +134,12 @@ export const TranslationCards: {
         { text: 'Relevant', isBold: true },
         { text: 'to Work and Life', isBold: false },
       ],
+      mn: [
+        { text: 'Сайн мэдээг', isBold: true },
+        { text: 'ажил болон', isBold: true },
+        { text: 'амьдралтайгаа', isBold: true },
+        { text: 'холбох', isBold: true },
+      ],
       lt: [
         { text: 'Atskleisti Evangelijos', isBold: false },
         { text: 'svarbą darbe', isBold: true },
@@ -167,6 +185,12 @@ export const TranslationCards: {
         steps: `Brainstorm topics that come up often at your workplace where you could make a connection to God’s work in the world or in your life personally.
           \nThink of a recent instance when you could have related your faith to a colleagues comment but you didn’t. Instead of feeling guilt or regret use that example as a chance to think how you could respond next time.`,
         example: `Elizabeth works in a high stress environment. She and her colleagues discuss it often. Elizabeth asked the others how they deal with it. When they inquired of her she told them she turns stress over to Jesus, who says he will take it from us because he cares for us. One colleague replied that she had never thought of turning something over to God before.`,
+      },
+      mn: {
+        top: `Есүсийн амьдрал, үхэл болон дахин амилалт нь дан ганц түүхийн баримт биш бөгөөд бидний амьдралын талбар бүрт хамааралтай юм. Бидний амьдралд үзүүлсэн Христийн нөлөөг бид хамт ажилладаг итгэгч биш хүмүүстээ харуулж чадна.`,
+        steps: `Өөрийн амьдралд тань болон энэ дэлхийд болж байгаа Бурханы ажлыг өөрийн ажлын талбар дээр тохиолддог зүйлстэй холбох сэдвүүдийг сэдэж олоорой.
+          \nӨөрийн итгэл үнэмшилтэй холбож болох байсан саяханы жишээг бодоорой. Харамсаж эсвэл өөрийгөө буруутгаж суухын оронд дараагийн удаа холбож болох тухай бодоод үзээрэй.`,
+        example: `Энэрэл стресс ихтэй орчинд ажилладаг. Тэр хамт ажилладаг хүмүүстэйгээ үүний талаар үргэлж ярилцдаг. Энэрэл тэднээс стрессээ хэрхэн давж гардаг талаар асуув. Харин тэд хариуд нь Энэрэлээс хэрхэн стрессээ давж гардгийг нь асуухад тэр “Есүс бидэнд санаа тавьдаг бөгөөд бидний ачааг хөнгөлнө гэж хэлсэн учраас би энэ стрессийг Есүсд даатгадаг.” гэв. Тэдний нэг нь “Өмнө нь хэзээ ч ямар нэг зүйлийг Бурханд даатгаж болно гэж бодож байгаагүй юм байна” гэж хариулжээ.`,
       },
       lt: {
         top: `Jėzaus gyvenimas, mirtis ir prisikėlimas yra kur kas daugiau nei paprasti istoriniai faktai. Ši tiesa keičia kiekvieną mūsų gyvenimo sritį. Mes galime atskleisti Evangelijos svarbą mūsų netikintiems bendradarbiams ir padėti jiems pamatyti, kokią įtaką Kristus daro mūsų gyvenimams.`,
@@ -227,6 +251,12 @@ export const TranslationCards: {
         { text: 'Inviting Them into', isBold: false },
         { text: 'Christian Community', isBold: true },
       ],
+      mn: [
+        { text: 'Тэднийг', isBold: true },
+        { text: 'Христ итгэлт', isBold: true },
+        { text: 'хүрээлэлд', isBold: true },
+        { text: 'урь', isBold: true },
+      ],
       lt: [
         { text: 'Pakviesti juos', isBold: false },
         { text: 'į krikščionių bendruomenę', isBold: true },
@@ -268,6 +298,13 @@ export const TranslationCards: {
           \nInviting non-Christians to church can be a good way to expose them to Christian community.
           \nIf they won’t come to church, are there social events you could organize or invite them to? These can be simple and as large or small as you feel is appropriate.`,
         example: `Hans and several of his friends from church like to cycle together on the weekends. Hans learned that one of his associates at work, Benni, really enjoys cycling, so Hans invited Benni to join the group on one of their weekend rides. Benni is not a Christian and had not really met many Christians before, but he enjoyed going out with this group of guys and wants to spend more time with them.`,
+      },
+      mn: {
+        top: `Христ итгэлт хүрээлэл дунд орж, тэдний хайрыг болон Бурхан тэр дунд хэрхэн ажиллаж байгааг харах нь итгэгч биш хүмүүст хүчтэй нөлөө үзүүлдэг.`,
+        steps: `Таны амьдралд итгэгч биш хүмүүсийг урьж оролцуулах боломжтой Христ итгэлт хүрээлэл байгаа юу?
+          \nИтгэгч биш хүмүүсийг цуглаанд урих нь тэднийг Христ итгэлт хүрээлэлд татан оруулах сайн арга юм.
+          \nХэрэв тэд цуглаанд ирэхгүй бол, тэднийг өөрсдийн нөхөрлөл эсвэл олон нийтийн үйл ажиллагаанд урьж болох юм. Нөхөрлөл эсвэл олон нийтийн үйл ажиллагаа нь том, жижиг ямар ч байж болно.`,
+        example: `Хангай болон түүний цуглааны хэдэн найзууд амралтын өдрөөр хамт дугуй унах дуртай. Хангайн ажлын хамтрагч Билгүүнийг дугуй унах дуртай гэдгийг олж мэдээд, түүнийг амралтын өдөр хамт дугуй унадаг бүлэгтээ урьлаа. Билгүүн итгэгч биш бөгөөд тийм ч олон итгэгч хүмүүстэй өмнө нь уулзаж байгаагүй юм. Гэвч тэрээр Хангай болон түүний итгэгч найзуудтай хамт байх дуртай болсон бөгөөд тэдэнтэй илүү их цагийг хамт өнгөрөөхийг хүсдэг боллоо.`,
       },
       lt: {
         top: `Kai mūsų netikintys draugai ir bendradarbiai mato meilę, kuri aiškiai regima krikščioniškoje bendruomenėje, ir pastebi Dievo darbą kituose žmonėse, tai jiems daro didelę įtaką.`,
@@ -334,6 +371,14 @@ export const TranslationCards: {
         { text: 'Earning Trust and Earning the Right to', isBold: false },
         { text: "Speak into Someone's Life", isBold: true },
       ],
+      mn: [
+        { text: 'Хэн нэгний', isBold: true },
+        { text: 'амьдралд нь үг', isBold: true },
+        { text: 'хэлэх', isBold: true },
+        { text: 'эрх болон', isBold: true },
+        { text: 'итгэлийг нь олж', isBold: true },
+        { text: 'авах', isBold: true },
+      ],
       lt: [
         { text: 'Kurti pasitikėjimą ir užsitarnauti', isBold: false },
         { text: 'teisę kalbėti su', isBold: true },
@@ -384,6 +429,15 @@ export const TranslationCards: {
           \nBe open and honest - Be willing to share your own struggles and be vulnerable where appropriate
           \nGive it time - Building trust doesn’t happen overnight. Be patient, persistent and consistent`,
         example: `Florence and Cho became friends when they began teaching at the same school around the same time. Florence had made casual mention of her church and the importance of her faith, but it was obvious Cho was not interested in discussing it. Florence sensed that Cho may have had some negative experience with Christians in her past that made her guarded with Florence. Florence decided to pray regularly for Cho and just continue to be her friend. It has been over a year and Florence has continued to listen without judgment to Cho as well as share her own struggles. Cho has become more open and has even begun to ask Florence for advice.`,
+      },
+      mn: {
+        top: `Хэн нэгэн хүн сүнслэг асуултууддаа хариулт олж авах аялалдаа биднийг оролцуулахын тулд эхлээд бидэнд итгэж болох юм байна гэсэн мэдрэмж авах хэрэгтэй. Бид урт хугацааны туршид хүмүүст хэрхэн өөрийгөө зориулж, тэднийг хайрлаж, итгэлийг нь олж авах аргад суралцах хэрэгтэй.`,
+        steps: `Тэдний төлөө залбир – Бурханаас тэр хүнийг гэх зүрх сэтгэлийг мөн түүнд туслаж чадах арга замуудыг гуйн залбираарай.
+          \nСонс, таньж мэд – Асуулт асуу, тэдний хуваалцаж байгаа зүйлсийг сонс, тэдний тухай болон тэдний сонирхлыг олж мэд.
+          \nТэдэнтэй цагийг өнгөрөө – Ажил дээрээ боломжтой үедээ тэдэнд зориулж цаг гарга, мөн ажлаас гадуур хамт цагийг өнгөрөөх арга замуудыг ол.
+          \nНээлттэй бөгөөд шударга бай – Өөрсдийн асуудал, бэрхшээлүүд болон эмзэг сэдвүүдээ тохиромжтой үед нь нээлттэй хуваалцахад бэлэн бай.
+          \nБитгий яар – Хэн нэгний итгэлийг нэг өдрийн дотор олчихгүй. Хүлээцтэй, тэвчээртэй, тууштай байгаарай.`,
+        example: `Оргил болон Чинзо нар нэг сургуульд нэг үед багшилж эхэлснээсээ хойш найзууд болсон. Оргил үе үе цуглааныхаа тухай болон итгэл үнэмшлийнхээ тухай Чинзо-д ярьдаг боловч Чинзо энэ тухай ярилцах дургүй байдаг нь илт байлаа. Чинзо-г хаалттай байгааг анзаараад өмнө нь Христ итгэлтэй холбоотой ямар нэгэн сөрөг зүйл тохиолдсон байж магадгүй юм байна гэж Оргил бодлоо. Оргил Чинзо-гийн төлөө тогтмол залбирч, түүнтэй үргэлжлүүлэн найзлахаар шийдсэн юм. Жил гаруй хугацаа өнгөрч Оргил Чинзо-г ямар нэгэн шүүмжлэлгүйгээр сонсож, мөн өөрийн асуудлуудыг хуваалцсаар л байлаа. Чинзо улам илүү нээлттэй болсон бөгөөд Оргилоос зөвлөгөө хүртэл асуудаг болсон байлаа.`,
       },
       lt: {
         top: `Kad žmogus atvirai kalbėtų dvasinėmis temomis, jis turi mumis pasitikėti. Mums svarbu išmokti su meile bendrauti su žmonėmis ir tai daryti ilgą laiką.`,
@@ -474,6 +528,11 @@ export const TranslationCards: {
         { text: 'Opening the Bible', isBold: true },
         { text: 'with your Colleague', isBold: false },
       ],
+      mn: [
+        { text: 'Хамт ажилладаг', isBold: true },
+        { text: 'хүнтэйгээ', isBold: true },
+        { text: 'Библи унших', isBold: true },
+      ],
       lt: [
         { text: 'Skaityti Bibliją', isBold: true },
         { text: 'kartu su bendradarbiu', isBold: false },
@@ -512,6 +571,14 @@ export const TranslationCards: {
           \nIf someone shows interest in reading the Bible you may want to lend them a copy or suggest where they should begin reading. Don’t assume they know the structure of books and verses as you do. For a good narrative story, start with the Gospel of Luke. The Gospel of John gives a good “executive summary” of the Bible.
           \nBe willing to discuss with your colleague what they read if they would like to, keeping in mind that this may all be very new to them.`,
         example: `In the 10 months that Rich had worked with Luke, they had become good friends. Rich had shared with Luke how he had become a Christian, and although Luke was not from a religious background he was interested in some of the spiritual insights Rich had shared. Luke confided to Rich that he was having trouble forgiving someone and Rich mentioned that the Bible actually had a lot to say about forgiveness. This caught Luke’s interest so he agreed to meet Rich after work one day to look at what the Bible had to say. Together they looked at the story of the woman at the well and this led to an even deeper spiritual discussion.`,
+      },
+      mn: {
+        top: `Есүсийг таньж мэдэх хамгийн сайн аргуудын нэг бол Бурханы үгийг өөрсдөө унших юм.`,
+        steps: `Зарим хүмүүс Библийг бараг мэдэхгүй эсвэл сонирхохгүй байхад зарим нь Библийн талаар угийн сониуч байдаг. Тохиромжтой цагийг хүлээх нь залбирал болон тэвчээрийг шаардана.
+          \nӨөртөө тохиолдсон асуудал болон Библиэс уншсан зүйлсийг холбож ярих боломжийг олж хар. Олон хүмүүс Библид бидний өдөр тутмын амьдралд тохиолддог зүйлсийн тухай өгүүлдгийг тэр бүр мэддэггүй.
+          \nХэрэв хэн нэгэн Библи унших сонирхолтой байгаагаа хэлвэл өөрт байгаа номоо өгөн, хаанаас эхлэж уншихыг санал болгож болох юм. Тэднийг чам шиг Библийн бүтэц болон эшлэлүүдийг мэддэг гэж бүү бодоорой. Хүүрнэл сайтай түүх уншъя гэвэл Сайн мэдээний Лук номноос уншаарай. Сайн мэдээний Иохан ном Библийг сайн дүгнэсэн агуулгатай байдаг.
+          \nХэрэв тэд хүсэх юм бол тэдний уншсан зүйлсийн талаар ярилцахад нээлттэй байгаарай, мөн тэдний хувьд энэ нь цоо шинэ зүйл гэдгийг санахад илүүдэхгүй.`,
+        example: `Хамт ажилласан 10 сарын хугацаанд Итгэл болон Мөрөн нар сайн найзууд болжээ. Итгэл хэрхэн Христ итгэгч болсон тухайгаа Мөрөнтэй хуваалцсан бол Мөрөнгийн хувьд хэдийгээр итгэл үнэмшлийн суурь ойлголтгүй байсан ч Итгэлийн хуваалцсан сүнслэг ойлголтуудыг сонирхож байлаа. Мөрөн хэн нэгнийг уучилж чадахгүй байгаа тухайгаа Итгэлд хуваалцсан бөгөөд Итгэл хариуд нь Библид уучлалын талаар зөндөө зүйлс байдгийг дурдлаа. Энэ нь Мөрөнгийн анхаарлыг татсан бөгөөд тэд нэг өдөр ажлын дараа уулзаж Библид үүний тухай юу гэж хэлснийг уншиж үзэхээр тохирсон. Тэд хамтдаа худаг дээрх эмэгтэйн түүхийг уншсан бөгөөд энэ нь улам гүнзгий сүнслэг яриа болж өрнөжээ.`,
       },
       lt: {
         top: `Vienas iš geriausių būdų žmogui pažinti Jėzų yra pačiam skaityti Dievo Žodį.`,
@@ -594,6 +661,11 @@ export const TranslationCards: {
         { text: "Finding Out Someone's", isBold: false },
         { text: 'Perception of Jesus', isBold: true },
       ],
+      mn: [
+        { text: 'Есүсийн тухай юу', isBold: true },
+        { text: 'гэж боддогийг', isBold: true },
+        { text: 'нь олж мэдэх', isBold: true },
+      ],
       lt: [
         { text: 'Sužinoti, ką kitas', isBold: false },
         { text: 'mąsto apie Jėzų', isBold: true },
@@ -639,7 +711,13 @@ export const TranslationCards: {
           \nHave suggestions to get them engaged in learning more about Jesus (this could be giving them a book to read, inviting them to an event or simply planning a time to talk further).`,
         example: `Mike, a junior consultant, was working late and eating takeaway with a colleague Leon. Leon had showed curiosity in Mike’s faith and had asked about his weeknight church small group. As they ate, Mike decided to ask Leon some deeper questions about his perspective on God and Jesus. Leon shared that he thought Jesus was a good man but not God. Mike listened and shared some of his thoughts of his own. The discussion was lively but cordial and in the end Mike asked Leon if he would like to look at the Bible together sometime to see what Jesus had to say about himself. Leon agreed.`,
       },
-
+      mn: {
+        top: `Итгэгч биш хүн Есүсийн тухай юу гэж боддогийг ойлгосоноор тэдний юунд итгэж найддагийг нь таньж мэдэхэд тусална. Тэгснээр та тэдэнтэй хэрхэн ярилцах, ямар асуулт болон сэдвүүдээр сайн мэдээг хүргэж болохыг олж мэднэ.`,
+        steps: `“Таны бодлоор Бурхан гэж хэн бэ?” “Та Есүсийг юу гэж боддог вэ?” гэх мэт асуултууд бодож олоорой.
+          \nТэдний үзэл бодол, сонирхлыг чин сэтгэлээсээ сонирхож асуугаарай.
+          \nЕсүсийн тухай илүү ихээр сурч мэдэхэд нь тус болох зүйлсийг санал болгоорой. (Тэдэнд унших ном өгч болно, хөтөлбөрт урьж болно, хамт ярилцах цаг гаргаж болно).`,
+        example: `Мандах туслах зөвлөхийн ажил хийдэг бөгөөд хамт ажилладаг Түшигтэй оройтож ажиллаад, түргэн хоол идэж байлаа. Түшиг Мандахын итгэл үнэмшлийн талаар сонирхож байсан бөгөөд Мандахын цуглааны эсийн бүлгийн уулзалтын талаар асуусан юм. Хооллож байх зуураа Мандах Түшигээс түүнийг Бурхан болон Есүсийн талаар юу гэж боддогийг асуухаар шийдлээ. Түшиг хэлэхдээ Есүс бол сайн хүн, гэхдээ Бурхан биш байсан гэж боддог тухайгаа хуваалцав. Энэ яриа их нөхөрсөг байсан бөгөөд төгсгөлд нь Мандах Түшигээс хамт Библи уншиж, Есүс Өөрийнхөө талаар юу гэж хэлсэнийг мэдмээр байгаа эсэхийг асуув. Түшиг зөвшөөрлөө.`,
+      },
       lt: {
         top: `Sužinoję, ką netikintis mąsto apie Jėzų, geriau suprantame, kuo jis tiki. Tuomet žinome, kokia linkme kreipti diskusiją ir kokie klausimai ar temos padės jam pamatyti, kad evangelija yra aktuali šiandien.`,
         steps: `Sugalvokite klausimus, kurie padės suprasti jų dabartinį požiūrį, pavyzdžiui: „Kaip manai, kas yra Dievas?“ arba „Ką galvoji apie Jėzų?“
@@ -707,7 +785,12 @@ export const TranslationCards: {
         { text: 'Praying', isBold: true },
         { text: 'for People at Work', isBold: false },
       ],
-
+      mn: [
+        { text: 'Хамт ажилладаг', isBold: true },
+        { text: 'хүмүүсийнхээ', isBold: true },
+        { text: 'төлөө', isBold: true },
+        { text: 'залбирах', isBold: true },
+      ],
       lt: [
         { text: 'Melstis', isBold: true },
         { text: 'už žmones darbe', isBold: false },
@@ -752,7 +835,13 @@ export const TranslationCards: {
           \nWatch for appropriate times when you can ask to pray with someone. This can be a great blessing and comfort to them and may open the door for further dialogue.`,
         example: `Rachael is a community nurse. On a routine home visit she noticed that her patient was unusually upset. The woman shared that she had just received a cancer diagnosis. Rachael encouraged the woman to share some of what she was feeling. At the end of the visit, Rachael felt impressed by God to ask the woman if she could pray with her. The woman agreed and Rachael prayed for the woman to know Jesus’ comfort and peace. The patient was clearly moved, gave Rachael a tearful thanks, and has since been more open to share with Rachael.`,
       },
-
+      mn: {
+        top: `Бурхан бидэнд хамт ажилладаг хүмүүс, үйлчлүүлэгч мөн түншүүдийнхээ төлөө залбирах боломжийг байнга олгож байдаг. Зарим нь магадгүй ганц л олдох боломж байдаг бол зарим нь сар жилээр тасралтгүй залбирах боломжууд ч байдаг.`,
+        steps: `Таны ажлын талбар дээр хэн нэгэнд залбирал хэрэгтэй байгаа нөхцөл байдлыг олж харан, тэдний төлөө залбирахад бэлэн байгаарай. Утас эсвэл тэмдэглэлийн дэвтэр дээрээ залбирлаа тэмдэглэх нь тэдний төлөө тогтмол мөн тодорхой залбирахад тусална.
+          \nХэрвээ зарим итгэгч биш хүмүүс “таныг залбирдаг хүн гэдгийг” мэдвэл ялангуяа хүнд нөхцөл байдалд орсон үедээ танаас залбирч өгөхийг асуух болно. Магадгүй хуваалцсан зүйлсийнх нь төлөө та санаачлагатайгаар залбирч болох юм. Аль ч нөхцөлд та заавал залбираад, тэдний төлөө залбирсан гэдгээ мэдэгдэж байгаарай.
+          \nХамт залбирахыг асуух тохиромжтой мөчийг ажиглаж байгаарай. Ингэснээр тухайн хүмүүст гайхалтай ивээл, тайтгарлыг авчрах бөгөөд цаашдын харилцаануудын үүд хаалгыг нээх боломжтой.`,
+        example: `Мишээл бол дуудлагын сувилагч бөгөөд нэг өдөр түүний өвчтөн маш их сэтгэлээр унасныг тэр анзаарсан. Эмэгтэй хорт хавдартай гэдгээ саяхан мэдсэн тухайгаа түүнд хэлэв. Мишээл түүнээс ямар мэдрэмж төрсөн тухайгаа хуваалцахыг хүсэв. Уулзалтынхаа төгсгөлд түүний төлөө хамт залбирахыг Бурхан Мишээлд сануулав. Түүнээс асуухад эмэгтэй зөвшөөрч, Мишээл түүнийг Есүсийн тайтгарал мөн амар тайвныг таньж мэдээсэй гэж залбирлаа. Эмэгтэйн сэтгэл хөдөлж, Мишээлд талархлаа илэрхийлээд, тэр мөчөөс эхлэн Мишээлтэй илүү дотно байдлаар бүх зүйлсээ хуваалцдаг болжээ.`,
+      },
       lt: {
         top: `Dievas nuolatos mums suteikia galimybių melstis už situacijas su bendradarbiais, pirkėjais ir klientais. Kai kurios situacijos gali būti vienkartinės galimybės, o kitos tampa pastovia malda, kuri trunka savaitėmis ar mėnesiais.`,
         steps: `Būkite atidus (-i), kad pastebėtumėte, kam darbe reikia Jūsų maldų. Pasižymėkite tai telefone arba kompiuteryje, taip Jūsų maldos bus dažnesnės ir konkretesnės.
@@ -822,6 +911,12 @@ export const TranslationCards: {
         { text: 'Living a Life that', isBold: false },
         { text: 'Demands an Explanation', isBold: true },
       ],
+      mn: [
+        { text: 'Тайлбар', isBold: true },
+        { text: 'шаардсан', isBold: true },
+        { text: 'амьдралын хэв', isBold: true },
+        { text: 'маягаар амьдрах', isBold: true },
+      ],
       lt: [
         { text: 'Gyventi tokį gyvenimą', isBold: false },
         { text: 'kuris reikalauja paaiškinimo', isBold: true },
@@ -865,7 +960,12 @@ export const TranslationCards: {
           \nThink about how you would respond if someone asked you why you acted in the way that you did. Remember that you don’t want to preach but rather make a simple connection between an act of kindness and your faith.`,
         example: `Amos works in a firm where most of the staff has worked together for a couple of years and know each other well. A new associate has just joined and the rest of the office is making his initiation to the firm difficult by giving him an unbearable workload of all the least desirable jobs as well as talking behind his back. Amos was tempted to laugh with the others, but he decided that, as a Christ follower, he should be a help and encouragement to the new associate. He has been kind to him and offered help. Amos is beginning to notice the other associates now seem less comfortable giving the “new guy” a hard time and are being nicer to him as well.`,
       },
-
+      mn: {
+        top: `Бидний өдөр тутмын амьдралын хэв маяг, үйлдлүүд нь Бурханы хайрыг ажлынхаа хамтрагчдад тодорхой гэрчлэх нэгэн арга байж болно.`,
+        steps: `Христийн хайраар үйлдэж, ажлын талбар дээрээ бусдад нөлөөлөх аргуудыг бодож олоорой.
+          \nХэн нэгэн таниас “бусдаас яагаад ийм өөр байгаа тухай” асуувал хэрхэн, яаж хариулахаа бодож үзээрэй. Та хэн нэгэнд зааж сургаад байх биш, сайн үйлс болон итгэл хоёрын уялдаа холбоог энгийнээр хуваалцахыг санаарай.`,
+        example: `Амараа олон жил хамт ажиллаж, бие биенээ сайн мэддэг болсон хамт олонтой компанид ажилладаг. Тэднийх саяхан шинэ ажилтантай болсон ба компаний ажилчид нь түүнд хэний ч хийхийг хүсдэггүй ажлуудыг маш ихээр даалгаж, мөн ардуур нь муулж байсан бөгөөд энэ байдал нь түүнийг шинэ ажилдаа дасахад хэцүү болгож байлаа. Амараа бусадтайгаа хамт түүнийг гадуурхчих гээд байсан хэдий ч Христ итгэгчийнхээ хувьд шинэ хамтрагчдаа тусалж, түүнийг урамшуулж, дэмжихээр шийдсэн. Амараа түүнд найрсаг хандаж, тусалсаар л байлаа. Амараагийн хандлагыг ажлынхан нь хараад, шинэ ажилтанг “шинэ залуу” гэсэн өнцгөөр хандах нь багасаж, Амараагийн түүнд хандсан шиг илүү дотно нөхөрсөг болж байгааг Амараа анзаарч эхэллээ.`,
+      },
       lt: {
         top: `Mūsų kasdieninis elgesys bendradarbiams liudija Dievo meilę.`,
         steps: `Kaip Jūsų sekimas Jėzumi keičia Jūsų elgesį darbe?
@@ -926,7 +1026,13 @@ export const TranslationCards: {
         { text: 'Finding Out', isBold: false },
         { text: "Someone's Spiritual Background", isBold: true },
       ],
-
+      mn: [
+        { text: 'Хүмүүсийн', isBold: true },
+        { text: 'сүнслэг', isBold: true },
+        { text: 'итгэл', isBold: true },
+        { text: 'үнэмшлийг таньж', isBold: true },
+        { text: 'мэдэх', isBold: true },
+      ],
       lt: [
         { text: 'Sužinoti kokia', isBold: false },
         { text: 'yra žmogaus dvasinė patirtis', isBold: true },
@@ -971,7 +1077,12 @@ export const TranslationCards: {
           \nMake sure you ask at an appropriate time and place and listen respectfully to whatever they share.`,
         example: `Sanjay, a junior engineer, was travelling with a senior engineer he did not know well but admired very much. Conversation turned to their plans for the weekend. Sanjay mentioned church and his colleague asked a few questions. Sanjay nervously asked, “Would you say you have a faith yourself?” His colleague paused, then began to open up about his upbringing, his beliefs about God and some of his current feelings about faith. Sanjay didn’t know much about the religious beliefs he was describing so he just chose to listen and be attentive. Now when they see each other, the conversations naturally go to a deeper level.`,
       },
-
+      mn: {
+        top: `Хүмүүсийн итгэл үнэмшлийн талаар асуулт асуух нь нөхөрсөгөөр сүнслэг яриа эхлүүлэх арга байж чадна.`,
+        steps: `Хэн нэгэний итгэл үнэмшлийн талаар эелдэгээр асуух асуултууд бодож үзээрэй.
+          \nЭнэ тухай тохиромжтой цагт, зөв газартаа асуугаарай, тэд юу ч хуваалцаж байсан хүндэтгэлтэй сонсоорой.`,
+        example: `Санжаа бол туслах инженер. Нэгэн удаа Санжаа өөрийн сайн таньдаггүй хэдий ч хамгийн ихээр хүндэлдэг ахлах инженертэйгээ аялалд явж байв. Тэд амралтын өдрийнхөө төлөвлөгөөний талаар ярилцлаа. Санжаа цуглааны талаар ярихад ахлах инженер нь цуглааны талаар хэдэн зүйлс асуулаа. Санжаа сандран “Танд ч бас итгэл үнэмшил байдаг уу?” гэж асуусан. Инженер түр бодсоны дараа Бурханы талаарх ойлголт болон одоогийн өөрийнхөө итгэл үнэмшилийн талаар хуваалцаж эхэлсэн. Санжаа түүний тайлбарлаж буй шашны ойлголтуудын талаар мэдэхгүй байсан учраас зүгээр л анхааралтайгаар сонсохоор шийдсэн. Одоо тэд уулзах үедээ илүү гүн гүнзгий зүйлсийн талаар ярилцдаг болсон.`,
+      },
       lt: {
         top: `Klausimai apie kieno nors dvasinę patirtį gali atverti kelią dvasiniam dialogui.`,
         steps: `Pagalvokite, kokius klausimus (jie turėtų būti neįžeidžiantys!) galėtumėte užduoti žmogui apie jo dvasinę patirtį.
@@ -1032,7 +1143,11 @@ export const TranslationCards: {
         { text: 'Telling Them', isBold: false },
         { text: 'You Are a Christian', isBold: true },
       ],
-
+      mn: [
+        { text: 'Өөрийгөө', isBold: true },
+        { text: 'Христ итгэгч', isBold: true },
+        { text: 'гэдгээ хэлэх', isBold: true },
+      ],
       lt: [
         { text: 'Pasakyti jiems', isBold: false },
         { text: 'kad esi krikščionis', isBold: true },
@@ -1074,7 +1189,12 @@ export const TranslationCards: {
           \nThink through easy ways to bring it up. Be positive and mention activities you are involved in, not a list of things “don’t do”.`,
         example: `Ian recently took his “dream” position as a technical advisor on a television production. He has been pleased to find the cast and crew friendly. At the close of work one day several colleagues began talking about their plans for the evening. Ian was hesitant to tell the group that he was going to a small group bible study that night for fear of being labeled weird, but he decided to mention it as naturally. One woman asked if he was religious and Ian replied that actually, he was just someone who followed Jesus. Surprisingly, most did not seem as uncomfortable as Ian had feared. This has boosted his desire to live for Christ at work.`,
       },
-
+      mn: {
+        top: `Харилцааныхаа эхэн үед хамт ажиллагсаддаа өөрийгөө Христ итгэлтэй гэдгийг ойлгуулах нь чухал. Таны амьдралд итгэл нь хичнээн чухал гэдгийг юу хэлж, юу үйлдэж байгаа тань тодорхойлж өгдөг.`,
+        steps: `Христ итгэгч гэдэг нь та төгс төгөлдөр байх ёстой гэсэн үг биш гэдгийг санаарай. Зүгээр л өөрийгөө Христэд итгэдэг гэдгээ мөн Түүнийг үнэнчээр дагах гэж оролдож буйгаа тэдэнд шударгаар хэлээрэй. Хүмүүс “сайн хүн”-ээс илүү “даруу хүн”-д нааштай ханддаг.
+          \nАмархан аргаар итгэл үнэмшлээ илэрхийлэх талаар бодоорой. Эерэг байж, өөрийн оролцдог үйл ажиллагаануудаа дурдаарай.`,
+        example: `Ивээл саяхан өөрийн мөрөөдлийн ажил болох телевизийн техникийн зөвлөхийн ажилд томилогдсон. Түүний хамтран ажиллах багийнхан нөхөрсөг байгаад тэр баяртай байв. Нэг өдөр ажил тарах үед хамт ажилладаг хэд хэдэн хүмүүс нь оройн төлөвлөгөөнийхөө талаар ярилцаж эхлэв. Тэрээр “хачин” гэж хэлүүлэх болов уу хэмээх айдсаасаа болоод орой библи судлалын уулзалттай гэдгээ хэлэхээсээ эргэлзэж байсан ч үүнийгээ эвтэйхэн хэлэхээр шийдсэн. Нэгэн эмэгтэй Ивээлээс шүтлэгтэй эсэхийг асуухад тэрээр өөрийгөө зүгээр л Есүсийн дагалдагч хэмээн хариулсан. Гайхалтай нь ихэнх хүмүүс түүний санаа зовж байсан шиг сөргөөр хүлээж авсангүй. Энэ нөхцөл байдал түүний ажил дээрээ Христийн төлөө байх хүслийг илүү бадрааж өгсөн.`,
+      },
       lt: {
         top: `Jei dar bendravimo pradžioje natūraliai pasakysite kolegoms, kad esate krikščionis, tai padės pamatą tam, ką sakysite ir darysite ateityje, bei parodys, kad tikėjimas Jūsų gyvenime užima svarbią vietą.`,
         steps: `Prisiminkite, kad neturite būti tobulas (-a) krikščionis (-ė). Tiesiog pasakykite, jog tikite Jėzumi ir stengiatės Juo sekti. Žmonės geriau priima nuolankų nei „gerą žmogų“. 
@@ -1137,7 +1257,10 @@ export const TranslationCards: {
         { text: 'Building a', isBold: false },
         { text: 'Friendship', isBold: true },
       ],
-
+      mn: [
+        { text: 'Нөхөрлөл', isBold: true },
+        { text: 'бий болгох', isBold: true },
+      ],
       lt: [
         { text: 'Užmegzti draugiškus', isBold: false },
         { text: 'santykius', isBold: true },
@@ -1172,7 +1295,12 @@ export const TranslationCards: {
           \nIdentify relationships at work you would like to put more effort into developing. List several simple actions you could take to build those relationships.`,
         example: `James wants to build friendships at his new job in a large media corporation. He has gotten to know Tom from another team and discovered that he has a passion for social justice. Tom suggested a book on the subject to James, and as he read it he would ask Tom questions and they would discuss the themes of the book. James has now suggested a Christian book to Tom and they have begun to discuss that together. The two have gotten to know each other better through this process and the relationship has now grown to social interactions outside of work.`,
       },
-
+      mn: {
+        top: `Есүс бидэнд итгэгч биш хүмүүстэй хэрхэн харилцаа үүсгэх үлгэр жишээг үзүүлсэн. Бид ажлын хамт олонтойгоо илүү дотно болох тусам Бурханы хайрыг тэдэнд хуваалцах боломжууд мөн ихэсдэг.`,
+        steps: `Өмнө байсан эсвэл одоо байгаа ажил дээрх хамгийн эерэг харилцаануудаа бодож үзээрэй. Тухайн харилцаа бий болоход юу нэмэр болсон бэ?
+          \nХичээл зүтгэл гарган, сайжруулах хүсэлтэй ажлын харилцаануудаа тодорхойлоорой. Эдгээр харилцааг бий болгоход өөрийн гаргаж болох хэд хэдэн энгийн үйлдлүүдээ жагсаан бичээрэй.`,
+        example: `Жаргал өөрийн ажилдаг томоохон хэвлэл мэдээллийн байгууллагад найз нөхөдтэй болохыг хүсч байлаа. Тэр өөр багт ажилладаг Төгөлдөртэй танилцсан бөгөөд түүнийг нийгэмд шударга ёсыг тогтоон байгуулах хүсэл эрмэлзэлтэй гэдгийг олж мэдлээ. Төгөлдөр Жаргалд нийгэм дэх шударга ёсны тухай номыг санал болгосон бөгөөд Жаргал номоо унших хугацаанд Төгөлдөрөөс асуултууд асуун номны гол сэдвийн тухай хамтдаа ярилцсан. Энэ удаа Жаргал Төгөлдөрт Христ итгэлт ном санал болгоод үүний талаар ярилцаж эхэлсэн. Энэ арга замаар тэд бие биенийгээ илүү таньж мэдэн, ажлын бус цагаар ч нөхөрлөдөг болсон.`,
+      },
       lt: {
         top: `Jėzus mums parodė pavyzdį, kaip užmegzti santykius su netikinčiaisiais. Kai susidraugaujame su savo bendradarbiais, galime jiems dažniau parodyti Dievo meilę.`,
         steps: `Prisiminkite, kokie buvo artimiausi santykiai, kuriuos Jums pavyko užmegzti darbo aplinkoje. Kodėl būtent tie darbo santykiai išaugo į draugystę?
@@ -1234,7 +1362,10 @@ export const TranslationCards: {
         { text: 'Sharing your', isBold: false },
         { text: 'Story', isBold: true },
       ],
-
+      mn: [
+        { text: 'Өөрийн түүхээ', isBold: true },
+        { text: 'хуваалцах', isBold: true },
+      ],
       lt: [
         { text: 'Papasakoti savo', isBold: false },
         { text: 'istoriją', isBold: true },
@@ -1269,7 +1400,12 @@ export const TranslationCards: {
           \nThink of incidents or themes in your life where faith has played a major role. Discuss with the group ways these could be related to situations at work.`,
         example: `Ruth and Mara work together at a design firm. As the two have become friends they are sharing more openly with each other and Ruth senses that Mara has some interest in spiritual things. While discussing romantic relationships, Ruth confided in Mara about a heartbreak and how she struggled with trust for some time. Ruth also shared how her relationship with Jesus helped her to learn about true trustworthiness. This has sparked Mara’s interest in learning more about Jesus.`,
       },
-
+      mn: {
+        top: `Бурхан амьдралыг тань өөрчилсөн тухай таны хувийн туршлага бусдад хүчтэй хүрэх болно.`,
+        steps: `Христтэй уулзсан өөрийн түүхээ \\3 эсвэл түүнээс бага минут\\ бичээд, үүнийгээ цээжлээрэй. Багийнхаа гишүүдийн нэгэнтэй өөрийн түүхээ хуваалцаж бэлтгэл хийгээрэй.
+          \nТаны амьдралд итгэл үнэмшил тань гол үүрэг гүйцэтгэсэн нөхцөл байдал болон үйл явдлуудын тухай бодоорой. Иймэрхүү үйл явдлууд ажлын талбар дээр тань ч тохиолдож болох тухай ярилцаарай.`,
+        example: `Учрал болон Маргад дизайны компанид хамт ажилладаг. Тэр хоёр найзлах тусам бие биетэйгээ улам нээлттэй ярилцдаг болсон бөгөөд Маргад сүнслэг зүйлсийг сонирхож байгааг Учрал анзааржээ. Хайр сэтгэлийн талаар ярилцаж байхдаа Учрал хэрхэн зүрх нь шархалж, хүнд итгэж чадахаа больсон тухайгаа Маргадтай ярилцжээ. Учрал мөн Христтэй харилцах харилцаа нь түүнд хэрхэн тусалдаг талаар хуваалцлаа. Энэ нь Маргадад Христийн талаар илүү ихийг мэдэх хүслийг төрүүлсэн.`,
+      },
       lt: {
         top: `Asmeninė patirtis apie tai, kaip Dievas keičia Jūsų gyvenimą, gali sujaudinti žmonių širdis. `,
         steps: `Parašykite istoriją, kaip pažinote Jėzų, ir išmokite ją mintinai. Pasipraktikuokite pasakodamas (-a) ją vienam iš grupės narių. Jūsų istorija turėtų trukti ne daugiau nei tris minutes.

@@ -1,4 +1,5 @@
 import { Socket } from 'socket.io';
+import { clientRedis, setRedis } from './redis';
 
 export enum Events {
   PERSON_JOINED = 'PERSON_JOINED',
@@ -176,7 +177,8 @@ function generateCode(roomCodes = [], depth = 0) {
 
 const MS_TO_CLEAN_UP = 30 * 60 * 1000; // 30 minutes
 function cleanUpOldRooms() {
-  Object.keys(SocketStore.roomCodeToCleanUp).forEach((code) => {
+  const targetRooms = Object.keys(SocketStore.roomCodeToCleanUp);
+  targetRooms.forEach((code, index) => {
     if (
       SocketStore.roomCodeToCleanUp[code] &&
       new Date().valueOf() - SocketStore.roomCodeToCleanUp[code] > MS_TO_CLEAN_UP
@@ -185,14 +187,32 @@ function cleanUpOldRooms() {
       delete SocketStore.rooms[code];
       delete SocketStore.roomCodeToCleanUp[code];
     }
+    if (index === targetRooms.length - 1) {
+      setRedis('SocketStore', SocketStore);
+    }
   });
 }
 
 function socketHandler(socket: Socket) {
   console.log('connected - SocketStore.clients', SocketStore.clients);
 
-  SocketStore.clients[socket.id] = SocketStore.clients[socket.id] || {};
+  SocketStore.clients[socket.id] = SocketStore.clients[socket.id] || { userId: null, code: null };
   console.log('JSON.stringify(SocketStore)', JSON.stringify(SocketStore));
+
+  clientRedis.get('SocketStore', (err, reply) => {
+    if (err) {
+      console.log(err);
+    }
+    if (reply) {
+      const { clients, users, rooms, roomCodeToCleanUp } =  JSON.parse(reply);
+      if (clients) { SocketStore.clients = { ...clients }; }
+      if (users) { SocketStore.users = { ...users }; }
+      if (rooms) { SocketStore.rooms = { ...rooms }; }
+      if (roomCodeToCleanUp) { SocketStore.roomCodeToCleanUp = { ...roomCodeToCleanUp }; }
+    }
+    setRedisSocketStore();
+  });
+  clientRedis.on('error', (err) => console.log(err));
 
   // Clean up old rooms
   cleanUpOldRooms();
@@ -222,6 +242,7 @@ function socketHandler(socket: Socket) {
         const { code, userId } = socketUser;
 
         SocketStore.clients[socket.id] = { code, userId };
+        setRedisSocketStore();
         const room = getRoom(code);
         console.log('sid equal? ', socketId === socket.id, code, userId, SocketStore.clients[socketId]);
         if (!room) {
@@ -252,6 +273,7 @@ function socketHandler(socket: Socket) {
 
         // Remove the old socket client user
         delete SocketStore.clients[socketId];
+        setRedisSocketStore();
       }
     }
   }
@@ -259,7 +281,9 @@ function socketHandler(socket: Socket) {
   const sendToMe = (event: string | symbol, ...args: any[]) => socket.emit(event, ...args);
   const sendToAllButMe = (event: string | symbol, ...args: any[]) => {
     const room = getMyRoom();
-    socket.to(room.code).emit(event, ...args);
+    if (room?.code) {
+      socket.to(room.code).emit(event, ...args);
+    }
   };
   const syncRoom = (meOnly?: boolean) => {
     const room = getMyRoom();
@@ -276,7 +300,8 @@ function socketHandler(socket: Socket) {
     }
   };
 
-  const getMyClient = () => SocketStore.clients[socket.id];
+const setRedisSocketStore = () => setRedis('SocketStore', SocketStore);
+  const getMyClient = () => SocketStore.clients[socket.id] || null;
   const getRoom = (code: RoomCode) => SocketStore.rooms[code] || null;
   const getMyRoom = () => {
     const code = getMyClient()?.code;
@@ -284,14 +309,21 @@ function socketHandler(socket: Socket) {
       // The room is alive and well again
       console.log('the room is alive again!', code);
       delete SocketStore.roomCodeToCleanUp[code];
+      setRedisSocketStore();
     }
     return SocketStore.rooms[code] || null;
   };
   const getMyUser = () => getUser(getMyClient()?.userId);
-  const setMyUserId = (id: string) => (SocketStore.clients[socket.id].userId = id);
+  const setMyUserId = (id: string) => {
+    SocketStore.clients[socket.id].userId = id;
+    setRedisSocketStore();
+  };
   const setMyCode = (code: RoomCode) => {
     socket.join(code);
-    SocketStore.clients[socket.id].code = code;
+    if (SocketStore.clients[socket.id]) {
+      SocketStore.clients[socket.id].code = code;
+      setRedisSocketStore();
+    }
   };
   const addLockedCard = (cardId: CardId) => {
     const room = getMyRoom();
@@ -302,16 +334,19 @@ function socketHandler(socket: Socket) {
       removeLockedCard(lockedCardId);
     }
     SocketStore.rooms[room.code].locked = { ...SocketStore.rooms[room.code].locked, [cardId]: me };
+    setRedisSocketStore();
   };
   const removeLockedCard = (cardId: CardId) => {
     const room = getMyRoom();
     if (!room) return;
     delete SocketStore.rooms[room.code].locked[cardId];
+    setRedisSocketStore();
   };
   const removeAllLocked = () => {
     const room = getMyRoom();
     if (!room) return;
     SocketStore.rooms[room.code].locked = {};
+    setRedisSocketStore();
   };
   const addSelection = (type: 'easy' | 'hard' | 'commit', selection: CardId[]) => {
     const room = getMyRoom();
@@ -319,18 +354,39 @@ function socketHandler(socket: Socket) {
     const user = getMyUser();
     if (type === 'easy') {
       SocketStore.rooms[room.code].easyResults = { ...room.easyResults, [user.id]: selection };
+      setRedisSocketStore();
     } else if (type === 'hard') {
       SocketStore.rooms[room.code].hardResults = { ...room.hardResults, [user.id]: selection };
+      setRedisSocketStore();
     } else if (type === 'commit') {
       SocketStore.rooms[room.code].commitResults = { ...room.commitResults, [user.id]: selection };
+      setRedisSocketStore();
     }
   };
-  const setRoom = (room: Room) => (SocketStore.rooms[room.code] = room);
-  const setRoomUsers = (code: RoomCode, users: User[]) => (SocketStore.rooms[code].users = users);
-  const setRoomHost = (code: RoomCode, id: string) => (SocketStore.rooms[code].hostUserId = id);
-  const setRoomBoard = (code: RoomCode, board: Board) => (SocketStore.rooms[code].board = board);
-  const setRoomRound = (code: RoomCode, round: Rounds) => (SocketStore.rooms[code].round = round);
-  const setUser = (user: User) => (SocketStore.users[user.id] = user);
+  const setRoom = (room: Room) => {
+    SocketStore.rooms[room.code] = room;
+    setRedisSocketStore();
+  };
+  const setRoomUsers = (code: RoomCode, users: User[]) => {
+    SocketStore.rooms[code].users = users;
+    setRedisSocketStore();
+  };
+  const setRoomHost = (code: RoomCode, id: string) => {
+    SocketStore.rooms[code].hostUserId = id;
+    setRedisSocketStore();
+  };
+  const setRoomBoard = (code: RoomCode, board: Board) => {
+    SocketStore.rooms[code].board = board;
+    setRedisSocketStore();
+  };
+  const setRoomRound = (code: RoomCode, round: Rounds) => { 
+    SocketStore.rooms[code].round = round;
+    setRedisSocketStore();
+  };
+  const setUser = (user: User) => {
+    SocketStore.users[user.id] = user;
+    setRedisSocketStore();
+  };
   const getUser = (id: string) => SocketStore.users[id];
   const isUserHost = () => {
     const me = getMyClient();
@@ -344,7 +400,7 @@ function socketHandler(socket: Socket) {
     let room = getMyRoom();
     if (userId && code) {
       const user = getMyUser();
-      const newUser: User = { ...user, status: user.status === 'removed' ? 'removed' : 'inactive' };
+      const newUser: User = { ...user, status: user?.status === 'removed' ? 'removed' : 'inactive' };
       if (!!room?.users.find((u) => u.id === userId)) {
         // Look up my user id, check if I'm still listed in the room, tell everyone that I left
         sendToAllButMe(Events.PERSON_LEFT, { code, user: newUser });
@@ -362,6 +418,7 @@ function socketHandler(socket: Socket) {
           // delete SocketStore.rooms[code];
           console.log('no users any more');
           SocketStore.roomCodeToCleanUp[room.code] = new Date().valueOf();
+          setRedisSocketStore();
           // TODO: remove any clients with the given room code
         } else {
           const activeUsers = newUsers.filter((u) => u.status !== 'inactive' && u.status !== 'removed');
@@ -419,6 +476,7 @@ function socketHandler(socket: Socket) {
       // Make sure board is filled correctly
       if (room.round !== Rounds.Order && !checkIsBoardFull(room.board)) {
         SocketStore.rooms[room.code].board = autoFillBoard(room.board);
+        setRedisSocketStore();
       }
     }
     setMyCode(code);
@@ -444,6 +502,7 @@ function socketHandler(socket: Socket) {
       setRoomUsers(room.code, newUsers);
     }
     delete SocketStore.users[user.id];
+    setRedisSocketStore();
     syncRoom();
   });
 
@@ -559,6 +618,7 @@ function socketHandler(socket: Socket) {
     if (room) {
       if (room.round !== Rounds.Order && !checkIsBoardFull(room.board)) {
         SocketStore.rooms[room.code].board = autoFillBoard(room.board);
+        setRedisSocketStore();
       }
       const existingUser = room.users.find((u) => u.id === data.user.id);
       if (existingUser && existingUser.status === 'removed') {
