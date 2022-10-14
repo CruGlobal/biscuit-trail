@@ -12,6 +12,7 @@
 # production
 /build
 /web/build
+/api/dist
 
 # misc
 .DS_Store
