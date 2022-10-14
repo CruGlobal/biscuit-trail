@@ -1,30 +1,40 @@
-FROM 056154071827.dkr.ecr.us-east-1.amazonaws.com/base-image-openresty
+FROM public.ecr.aws/docker/library/node:16-alpine
 
-# Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
-  && apt-get install -y build-essential nodejs \
-  && rm -r /var/lib/apt/lists/*
+# DataDog Autodiscovery log source
+LABEL com.datadoghq.ad.logs='[{"source": "nodejs"}]'
 
-# Copy container configuration
-COPY docker /
+# Upgrade alpine packages (useful for security fixes)
+RUN apk upgrade --no-cache
 
 # Copy app into the container (excludes files in .dockerignore)
 COPY . /usr/src/biscuit-trail
 RUN PATH="./node_modules/.bin:$PATH" \
     && cd /usr/src/biscuit-trail \
-    && npm --unsafe-perm install \
+    && npm install \
     && npm run build:api \
     && npm run build:web \
-    && mkdir -p /home/app/webapp/api \
+    && mkdir -p /home/app/webapp/public \
     && cp -R web/build/* /home/app/webapp/public \
+    && mkdir -p /home/app/webapp/api \
     && cp -R api/dist/* /home/app/webapp/api \
     && cd /home/app/webapp/api \
     && NODE_ENV=production npm install \
+    && chown -R node /home/app/webapp \
     && rm -rf /usr/src/biscuit-trail
 
-RUN adduser --disabled-password --home=/nodejs --gecos "" nodejs
-RUN mkdir -p /home/app/webapp
-RUN chown -R nodejs /home/app/webapp
+# Copy custom nginx config
+COPY nginx-conf /home/app/webapp/nginx-conf
 
 # Default environment variables/values
 ENV NODE_ENV=production
+
+# Use the node user
+USER node
+WORKDIR /home/app/webapp/api
+
+# Define volumes used by ECS to share public html and extra nginx config with nginx container
+VOLUME /home/app/webapp/public
+VOLUME /home/app/webapp/nginx-conf
+
+# Start the API server
+CMD ["node", "api/server.js"]
