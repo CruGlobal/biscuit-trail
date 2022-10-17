@@ -13,28 +13,28 @@ RUN PATH="./node_modules/.bin:$PATH" \
     && npm install \
     && npm run build:api \
     && npm run build:web \
-    && mkdir -p /home/app/webapp/public \
-    && cp -R web/build/* /home/app/webapp/public \
-    && mkdir -p /home/app/webapp/api \
-    && cp -R api/dist/* /home/app/webapp/api \
-    && cd /home/app/webapp/api \
+    && mkdir -p /home/node/webapp/public \
+    && cp -R web/build/* /home/node/webapp/public \
+    && mkdir -p /home/node/webapp/api \
+    && cp -R api/dist/* /home/node/webapp/api \
+    && cd /home/node/webapp/api \
     && NODE_ENV=production npm install \
-    && chown -R node /home/app/webapp \
+    && chown -R node:node /home/node/webapp \
     && rm -rf /usr/src/biscuit-trail
 
 # Copy custom nginx config
-COPY nginx-conf /home/app/webapp/nginx-conf
+COPY nginx-conf /home/node/webapp/nginx-conf
 
 # Default environment variables/values
 ENV NODE_ENV=production
 
 # Use the node user
-USER node
-WORKDIR /home/app/webapp/api
+# USER node
+WORKDIR /home/node/webapp/api
 
 # Define volumes used by ECS to share public html and extra nginx config with nginx container
-VOLUME /home/app/webapp/public
-VOLUME /home/app/webapp/nginx-conf
+VOLUME /home/node/webapp/public
+VOLUME /home/node/webapp/nginx-conf
 
 # Start the API server
 CMD ["node", "api/server.js"]
