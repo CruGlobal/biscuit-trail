@@ -11,5 +11,5 @@ clientRedis.once('ready', () => console.log('clientRedis connected'));
 clientRedis.on('error', (err) => console.log(err));
 
 export function setRedis(key, data) {
-  clientRedis.set(key, JSON.stringify(data)); 
+  clientRedis.set(key, JSON.stringify(data));
 }
