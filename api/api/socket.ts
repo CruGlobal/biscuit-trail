@@ -278,8 +278,8 @@ function socketHandler(socket: Socket) {
     }
   }
 
-  const sendToMe = (event: string | symbol, ...args: any[]) => socket.emit(event, ...args);
-  const sendToAllButMe = (event: string | symbol, ...args: any[]) => {
+  const sendToMe = (event: string, ...args: any[]) => socket.emit(event, ...args);
+  const sendToAllButMe = (event: string, ...args: any[]) => {
     const room = getMyRoom();
     if (room?.code) {
       socket.to(room.code).emit(event, ...args);
