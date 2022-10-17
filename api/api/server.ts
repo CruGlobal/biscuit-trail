@@ -7,7 +7,7 @@
 import app from './app';
 // import debug from 'debug'('thryve-rest-api:server'_;
 import http from 'http';
-import socketIO, { Socket } from 'socket.io';
+import { Server, Socket } from 'socket.io';
 import socketHandler from './socket';
 
 /**
@@ -23,7 +23,7 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
-const io = socketIO(server);
+const io = new Server(server);
 
 io.on('connection', (socket: Socket) => {
   socketHandler(socket);
