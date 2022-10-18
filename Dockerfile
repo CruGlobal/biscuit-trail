@@ -22,9 +22,6 @@ RUN PATH="./node_modules/.bin:$PATH" \
     && chown -R node:node /home/node/webapp \
     && rm -rf /usr/src/biscuit-trail
 
-# Copy custom nginx config
-COPY nginx-conf /home/node/webapp/nginx-conf
-
 # Default environment variables/values
 ENV NODE_ENV=production
 
