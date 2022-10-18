@@ -29,7 +29,7 @@ COPY nginx-conf /home/node/webapp/nginx-conf
 ENV NODE_ENV=production
 
 # Use the node user
-# USER node
+USER node
 WORKDIR /home/node/webapp/api
 
 # Define volumes used by ECS to share public html and extra nginx config with nginx container
