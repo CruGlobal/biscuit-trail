@@ -7,7 +7,9 @@
 import app from './app';
 // import debug from 'debug'('thryve-rest-api:server'_;
 import http from 'http';
-import socketIO, { Socket } from 'socket.io';
+import { Server, Socket } from 'socket.io';
+import { createAdapter } from "@socket.io/redis-adapter";
+import { createClient } from "@redis/client";
 import socketHandler from './socket';
 
 /**
@@ -23,19 +25,28 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
-const io = socketIO(server);
+const io = new Server(server);
 
-io.on('connection', (socket: Socket) => {
-  socketHandler(socket);
+const redisConfig = {
+  host: process.env.SESSION_REDIS_HOST || 'localhost',
+  port: process.env.SESSION_REDIS_PORT || '6379',
+  db: process.env.SESSION_REDIS_DB_INDEX || '0'
+}
+
+const pubClient = createClient( {url: `redis://${redisConfig.host}:${redisConfig.port}/${redisConfig.db}`} );
+const subClient = pubClient.duplicate();
+
+Promise.all([pubClient.connect(), subClient.connect()]).then(() => {
+  io.adapter(createAdapter(pubClient, subClient, {key: "biscuit-trail"}));
+
+  io.on('connection', (socket: Socket) => {
+    socketHandler(socket);
+  });
+
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
 });
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.

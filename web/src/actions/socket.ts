@@ -1,4 +1,4 @@
-import io from 'socket.io-client';
+import { io } from 'socket.io-client';
 import { Card } from '../utils/types';
 import { reduxStore } from '../App';
 import { REDUX_ACTIONS } from '../constants';
