@@ -25,6 +25,12 @@ app.set('view engine', 'html');
 
 app.use('/', routes);
 
+app.get('/monitors/lb', async (req, res) => {
+  return success(res, {
+    message: 'OK'
+  })
+})
+
 app.get('/version', async (req, res) => {
   return success(res, {
     version: packageJson.version,

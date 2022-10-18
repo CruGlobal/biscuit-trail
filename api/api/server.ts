@@ -37,7 +37,7 @@ const pubClient = createClient( {url: `redis://${redisConfig.host}:${redisConfig
 const subClient = pubClient.duplicate();
 
 Promise.all([pubClient.connect(), subClient.connect()]).then(() => {
-  io.adapter(createAdapter(pubClient, subClient));
+  io.adapter(createAdapter(pubClient, subClient, {key: "biscuit-trail"}));
 
   io.on('connection', (socket: Socket) => {
     socketHandler(socket);

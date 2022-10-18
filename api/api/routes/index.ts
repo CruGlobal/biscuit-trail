@@ -25,7 +25,6 @@ function reqLogger(req: Request, res: Response, next: NextFunction) {
   return next();
 }
 
-router.get( '/monitors/lb', (req, res) => res.status(200).send('OK').contentType('text/plain'));
 router.get(`${API}/ping`, (req, res) => apiUtils.success(res, true));
 router.get('/favicon.ico', (req, res) => res.status(204));
 
