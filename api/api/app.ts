@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction, RequestHandler } from 'express';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import packageJson from '../package.json';
@@ -17,13 +17,19 @@ const app = express();
 // Enable CORS for all requests
 app.use(cors());
 app.options('*', cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json() as RequestHandler);
+app.use(bodyParser.urlencoded({ extended: false }) as RequestHandler);
 app.use(cookieParser());
 app.use(useragent.express());
 app.set('view engine', 'html');
 
 app.use('/', routes);
+
+app.get('/monitors/lb', async (req, res) => {
+  return success(res, {
+    message: 'OK'
+  })
+})
 
 app.get('/version', async (req, res) => {
   return success(res, {
