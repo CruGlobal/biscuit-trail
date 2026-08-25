@@ -1,11 +1,19 @@
 name: Build & Deploy ECS
 
 on:
-  push:
-    branches:
-      # Automatically build and deploy master and staging. Additional branches may be added.
-      - master
-      - staging
+  # Parked v1 workflow — do not re-add push triggers. This app builds and
+  # deploys through .github/workflows/pipeline-v2.yml. Dispatch-only, which
+  # makes it an escape hatch during the window between merging this PR and the
+  # companion infrastructure change being applied, and a historical record of
+  # how the app used to ship after that: the production apply retires the
+  # identity this build assumes, and from then on a dispatch here fails at the
+  # build step. What still works afterwards is redeploying an image this
+  # workflow already built, dispatched from the deploy repo by build number.
+  #
+  # Restoring the push trigger would double-build every merge and push v1's
+  # environment-specific image tags alongside v2's candidates. The old
+  # `staging` branch mapping is gone with it — there is no `staging` branch and
+  # no `On Staging` label in the v2 flow.
   workflow_dispatch:
     # Allows manual build and deploy of any branch/ref
     inputs:
