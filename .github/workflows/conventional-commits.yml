@@ -1,0 +1,55 @@
+name: Conventional Commits
+
+# Validates that the PR title is a valid Conventional Commit. Two reasons it
+# matters on pipeline v2: the title becomes the commit subject on a squash merge,
+# and the deploy changelog is read straight from the commit subjects between two
+# releases — so a conventional title is what makes a promote's diff legible.
+#
+# Scope is optional (`feat:` and `feat(api):` both pass).
+#
+# The list below is the fleet default plus one addition: `docker`. Every
+# `commit-message.prefix` in .github/dependabot.yml must appear here or those
+# PRs can never merge once the branch ruleset is active — this repo's Dependabot
+# config uses `deps` (npm), `ci` (github-actions) and `docker` (base image), and
+# `docker` is not on the fleet default list. Keep the two files in step.
+#
+# The job name — "Validate PR Title" — is the required status check the
+# pipeline-v2 branch ruleset expects. Renaming the job silently drops that gate.
+#
+# Deliberately carries no branch filter, so it reports on every pull request
+# regardless of base branch. That is also what keeps it reporting through the
+# default-branch rename.
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+permissions:
+  pull-requests: read
+
+jobs:
+  semantic-pr:
+    name: Validate PR Title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            chore
+            ci
+            docs
+            build
+            deps
+            docker
+            perf
+            refactor
+            revert
+            style
+            test

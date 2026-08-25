@@ -35,3 +35,12 @@ VOLUME /home/node/webapp/nginx-conf
 
 # Start the API server
 CMD ["node", "api/server.js"]
+
+# Build identity for the v2 pipeline. Last on purpose: nothing in the build
+# needs the version, so a new build number invalidates no earlier layer.
+# "dev" covers local builds; the pipeline passes --build-arg VERSION=<build>,
+# which reaches here because build.sh already forwards $DOCKER_ARGS. This is
+# the only build-baked identity value — everything environment-specific
+# arrives at runtime, because the same image bytes run on both environments.
+ARG VERSION="dev"
+ENV DD_VERSION=${VERSION}

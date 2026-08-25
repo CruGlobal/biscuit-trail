@@ -1,0 +1,79 @@
+version: 2
+
+# This repo is NOT an npm-workspaces monorepo — the root package.json has no
+# `workspaces` key and installs the two packages through a `postinstall`
+# cd-chain. Dependabot therefore does not discover api/ and web/ from the root,
+# and the root manifest itself declares zero dependencies. So each package gets
+# its own entry and there is deliberately no `/` npm entry: one there would
+# monitor nothing and report no error.
+#
+# Grouping keeps review cost flat — one weekly PR per ecosystem for routine
+# minor/patch bumps. Majors always stay ungrouped so each gets its own PR and a
+# real migration check. That matters more here than on most repos: the base
+# image and both dependency trees are years stale, and the major-bump PRs are
+# the ones worth reading.
+#
+# Every `commit-message.prefix` below must also appear in the allowed types in
+# .github/workflows/conventional-commits.yml, or the PR fails `Validate PR
+# Title` and can never merge. `docker` is not on the fleet default type list and
+# was added there for this reason.
+updates:
+  - package-ecosystem: "npm"
+    directory: "/api"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      api-npm-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+  - package-ecosystem: "npm"
+    directory: "/web"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      web-npm-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+
+  # The Dockerfile's FROM names a literal tag, so Dependabot can parse it and
+  # will open PRs for base-image bumps. Kept ungrouped: the current base is a
+  # long-EOL Node line, and the bump off it is a major that deserves its own PR.
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "docker"
+      include: "scope"
