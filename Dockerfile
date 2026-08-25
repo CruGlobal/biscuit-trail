@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:16-alpine
+FROM public.ecr.aws/docker/library/node:26-alpine
 
 # DataDog Autodiscovery log source
 LABEL com.datadoghq.ad.logs='[{"source": "nodejs"}]'
