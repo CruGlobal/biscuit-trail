@@ -131,11 +131,9 @@ find those referenced anywhere, the reference is stale.
 - **No database, no migrations.** The companion infrastructure declares
   migrations disabled, so the deploy has no migration step at all. Redis is a
   cache/transport, not a schema — nothing to migrate.
-- **The v1 workflow is parked, not removed.**
-  `.github/workflows/build-deploy-ecs.yml` has no `push:` trigger and is
-  dispatch-only. Leave it that way. It is an escape hatch until the companion
-  infrastructure change is applied, and a readable record of how the app used
-  to ship after that.
+- **The v1 workflow is gone.** `.github/workflows/build-deploy-ecs.yml` was
+  removed once the app moved to pipeline v2. `pipeline-v2.yml` is the only
+  build; don't bring back a push-triggered one.
 
 ### 🔴 Promoting or rolling back drops every game in progress
 
