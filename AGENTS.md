@@ -110,14 +110,18 @@ find those referenced anywhere, the reference is stale.
   skips a digest release-candidate is already running. For a dormant app that
   is nearly every night. A nightly run that did nothing is a success, not a
   skipped build.
-- **A build produces a candidate**, tagged by date and by git sha, and deploys
-  it to release-candidate. `release-*` tags — the ones a promote creates — are
-  **permanent**; candidates age out.
-- **Promote and rollback are human actions**, run from the `CruGlobal/cru-deploy`
-  repo or the `cru` CLI (`cru app promote` / `cru app rollback`). They check
-  that you have push permission on this repo — the pipeline authorizes the
-  human who asked, not the workflow. An agent cannot promote to production on
-  its own.
+- **A build produces a candidate**, tagged by date and by git sha, and starts
+  a deploy of it to release-candidate through the deploy gate, with the run's
+  GitHub OIDC token. The deploy job has no org token, so if the gate refuses or
+  can't be reached, the deploy fails. `release-*` tags — the ones a promote
+  creates — are **permanent**; candidates age out.
+- **Promote and rollback are human actions**, started with the `cru` CLI
+  (`cru app promote -n biscuit-trail` /
+  `cru app rollback -n biscuit-trail <release>`) and run in the
+  `CruGlobal/cru-deploy` repo. The CLI signs you in with Okta and sends the
+  request through the deploy gate, which allows it only for the developers
+  listed in the companion infrastructure; push access to this repo does not
+  count. An agent cannot promote to production on its own.
 - **Deploy, promote, rollback and failure notifications** go to a Slack channel
   configured in the companion infrastructure, not here.
 - **The image is environment-agnostic.** The only build-baked value is
